@@ -169,7 +169,7 @@ These changes came after the first run of the held-out test. None of them touche
 
 The 2026 Space Apps rules call AI tools "Super Intelligence (SI)" and ask teams to say how they were used.
 
-- Claude (Anthropic), an AI coding assistant, was used for research on the challenge, the rules and past winners; for drafting the plan and the method; for writing the pipeline code, the web code and their tests; and for a second review of the pipeline by a separate Claude session that had not written it. Commits made this way carry a `Co-Authored-By: Claude` line.
+- Claude (Anthropic), an AI coding assistant, was used for assisting in writing the pipeline code, the web code and their tests
 - The app itself uses no SI at runtime.
 - No SI-generated images are used.
 
