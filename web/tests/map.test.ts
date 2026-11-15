@@ -144,7 +144,22 @@ describe('the map', () => {
     clearDots();
   });
 
-  it('does not take the scroll wheel until it has been clicked or focused', () => {
+  it('takes the scroll wheel as soon as the mouse is moved onto it, but not when the page scrolls it under a still pointer', () => {
+    const map = leafletMap();
+    expect(map.scrollWheelZoom.enabled()).toBe(false);
+    // Scrolling the page past the map brings it under the pointer, and the browser says the
+    // pointer is over it, without the pointer moving: the page keeps the wheel.
+    box.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
+    box.dispatchEvent(new MouseEvent('mousemove', { bubbles: true, movementX: 0, movementY: 0 }));
+    expect(map.scrollWheelZoom.enabled()).toBe(false);
+    // Moving the mouse onto the map hands it the wheel, with no click.
+    box.dispatchEvent(new MouseEvent('mousemove', { bubbles: true, movementX: 3, movementY: -1 }));
+    expect(map.scrollWheelZoom.enabled()).toBe(true);
+    box.dispatchEvent(new MouseEvent('mouseleave'));
+    expect(map.scrollWheelZoom.enabled()).toBe(false);
+  });
+
+  it('also takes the scroll wheel when it is clicked or focused', () => {
     const map = leafletMap();
     // A wheel over the map scrolls the page...
     expect(map.scrollWheelZoom.enabled()).toBe(false);

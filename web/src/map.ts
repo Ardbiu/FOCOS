@@ -147,7 +147,7 @@ let overlayLabel: HTMLElement | null = null;
 let overlayStatus: HTMLElement | null = null;
 /** On a touch screen, dragging the map is off until the map is tapped. */
 let touch = false;
-/** True once the map has been clicked, tapped or focused, until the reader leaves it. */
+/** True once the mouse has moved onto the map, or it has been clicked, tapped or focused, until the reader leaves it. */
 let active = false;
 /** The rectangle tool, its button's name in the toolbar, and the line that says how to use it. */
 let rectangle: RectangleTool | null = null;
@@ -336,6 +336,12 @@ export function initMap(element: HTMLElement, provinces: ProvinceShapes, options
   element.append(drawHint);
   element.addEventListener('click', () => setActive(true));
   element.addEventListener('focusin', () => setActive(true));
+  // With a mouse, moving onto the map is enough. Only a real move counts: when the page scrolls
+  // the map under a still pointer, browsers report the pointer over it with no movement, and a
+  // reader scrolling past must not find the wheel taken.
+  element.addEventListener('mousemove', (event) => {
+    if (!touch && !active && (event.movementX !== 0 || event.movementY !== 0)) setActive(true);
+  });
   element.addEventListener('mouseleave', () => setActive(false));
   element.addEventListener('focusout', (event) => {
     if (!element.contains(event.relatedTarget as Node | null)) setActive(false);
