@@ -343,8 +343,8 @@ describe('the method page', () => {
     const data = Array.from(byId('data-list').querySelectorAll('li')).map((li) => li.textContent);
     expect(data).toHaveLength(6);
     expect(data).toContain('Optional map layer: SAOCOM L-band radar mosaics, 2022, CONAE (Argentina’s space agency).');
-    expect(data).toContain('Built with Claude, an AI assistant (Anthropic). “How SI was used” in the README says what it did.');
-    expect(text('footer-si')).toBe('Built with Claude, an AI assistant (Anthropic). “How SI was used” in the README says what it did.');
+    expect(data).toContain('Designing and building was assisted with Claude, an AI assistant (Anthropic)');
+    expect(text('footer-si')).toBe('Designing and building was assisted with Claude, an AI assistant (Anthropic)');
     expect(text('excluded-text')).toBe(
       '167 days are left out of every comparison: the days on which one of the sensors delivered no data, and a window from 16 August to 2 September 2020 that was set aside before the test as a suspected Aqua outage. Today’s archive has Aqua data on most of those days, so leaving them out is only a precaution.',
     );

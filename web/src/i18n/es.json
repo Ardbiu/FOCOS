@@ -22,7 +22,7 @@
     "firms": "Datos de incendios: detecciones de focos activos de NASA FIRMS con MODIS (Aqua) y VIIRS ({viirs}).",
     "boundaries": "Límites provinciales: Georef, Argentina (CC BY 4.0).",
     "source": "Código fuente en GitHub",
-    "si": "Hecho con Claude, un asistente de IA (Anthropic). “How SI was used” en el README dice qué hizo."
+    "si": "El diseño y la construcción contaron con la ayuda de Claude, un asistente de IA (Anthropic)"
   },
   "area": {
     "heading": "Elegí un área",
@@ -530,7 +530,7 @@
         "Límites provinciales: Georef, Argentina (CC BY 4.0).",
         "Mapa base: colaboradores de OpenStreetMap.",
         "Capa de mapa opcional: mosaicos de radar SAOCOM en banda L, 2022, CONAE (la agencia espacial argentina).",
-        "Hecho con Claude, un asistente de IA (Anthropic). “How SI was used” en el README dice qué hizo."
+        "El diseño y la construcción contaron con la ayuda de Claude, un asistente de IA (Anthropic)"
       ],
       "excluded": "Se dejan fuera de todas las comparaciones {days} días: los días en que uno de los sensores no entregó datos y una ventana del 16 de agosto al 2 de septiembre de 2020 que se apartó antes de la prueba como posible corte de Aqua. El archivo actual tiene datos de Aqua en la mayoría de esos días, así que dejarlos afuera es solo una precaución.",
       "through": "Datos hasta {date}. Resultados de la prueba calculados el {generated}."

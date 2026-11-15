@@ -688,16 +688,18 @@ function drawCalendar(element: HTMLElement, model: CalendarModel, options: Calen
     const number = (box: SVGRectElement, name: string) => Number(box.getAttribute(name));
     const first = boxes[0];
     const last = boxes[boxes.length - 1];
+    // A bold frame that fills the 2-unit gap around the row and laps over its own cells' edges,
+    // so the next row, drawn later, never covers part of it.
     row.append(
       svg(doc, 'rect', {
-        x: number(first, 'x') - 2,
-        y: number(first, 'y') - 2,
-        width: number(last, 'x') + number(last, 'width') - number(first, 'x') + 4,
-        height: number(first, 'height') + 4,
-        rx: 3,
+        x: number(first, 'x') - 0.5,
+        y: number(first, 'y') - 0.5,
+        width: number(last, 'x') + number(last, 'width') - number(first, 'x') + 1,
+        height: number(first, 'height') + 1,
+        rx: 2.5,
         fill: 'none',
         stroke: HIGHLIGHT,
-        'stroke-width': 1.5,
+        'stroke-width': 3,
         class: 'cal-row-mark',
         'pointer-events': 'none',
       }),

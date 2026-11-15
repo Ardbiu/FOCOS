@@ -22,7 +22,7 @@
     "firms": "Fire data: NASA FIRMS active fire detections from MODIS (Aqua) and VIIRS ({viirs}).",
     "boundaries": "Province boundaries: Georef, Argentina (CC BY 4.0).",
     "source": "Source code on GitHub",
-    "si": "Built with Claude, an AI assistant (Anthropic). “How SI was used” in the README says what it did."
+    "si": "Designing and building was assisted with Claude, an AI assistant (Anthropic)"
   },
   "area": {
     "heading": "Choose an area",
@@ -530,7 +530,7 @@
         "Province boundaries: Georef, Argentina (CC BY 4.0).",
         "Base map: OpenStreetMap contributors.",
         "Optional map layer: SAOCOM L-band radar mosaics, 2022, CONAE (Argentina’s space agency).",
-        "Built with Claude, an AI assistant (Anthropic). “How SI was used” in the README says what it did."
+        "Designing and building was assisted with Claude, an AI assistant (Anthropic)"
       ],
       "excluded": "{days} days are left out of every comparison: the days on which one of the sensors delivered no data, and a window from 16 August to 2 September 2020 that was set aside before the test as a suspected Aqua outage. Today’s archive has Aqua data on most of those days, so leaving them out is only a precaution.",
       "through": "Data through {date}. Test results computed {generated}."

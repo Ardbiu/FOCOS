@@ -1126,10 +1126,10 @@ describe('the satellites named in the footer', () => {
 describe('the use of AI, as the Space Apps rules ask', () => {
   it('is credited in the footer, in both languages, with a pointer to the README', async () => {
     await start();
-    expect(text('footer-si')).toBe('Built with Claude, an AI assistant (Anthropic). “How SI was used” in the README says what it did.');
+    expect(text('footer-si')).toBe('Designing and building was assisted with Claude, an AI assistant (Anthropic)');
     click('lang-es');
     await app!.idle();
-    expect(text('footer-si')).toBe('Hecho con Claude, un asistente de IA (Anthropic). “How SI was used” en el README dice qué hizo.');
+    expect(text('footer-si')).toBe('El diseño y la construcción contaron con la ayuda de Claude, un asistente de IA (Anthropic)');
   });
 });
 
