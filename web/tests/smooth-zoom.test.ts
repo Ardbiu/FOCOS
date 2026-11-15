@@ -157,6 +157,35 @@ describe('SmoothWheelZoom', () => {
     expect(map.getZoom()).toBeCloseTo(2.5, 6);
   });
 
+  it('starts a second scroll from where the first came to rest, between levels, without jumping back first', () => {
+    map.scrollWheelZoom.enable();
+    wheel(-90); // three tenths of a level
+    run(1000);
+    expect(map.getZoom()).toBeCloseTo(4.3, 6);
+    const zooms: number[] = [];
+    map.on('zoom', () => zooms.push(map.getZoom()));
+    wheel(-150); // half a level more
+    run(1000);
+    expect(map.getZoom()).toBeCloseTo(4.8, 6);
+    // Only zooming in: the map never falls back to a rounder level on the way.
+    expect(Math.min(...zooms)).toBeGreaterThanOrEqual(4.3 - 1e-9);
+  });
+
+  it('holds a scroll made while Leaflet’s own zoom (a button, a double click) plays, and zooms when it ends', () => {
+    map.scrollWheelZoom.enable();
+    // jsdom does not run Leaflet's zoom animation, so the test plays one by hand. When the real
+    // one ends, Leaflet puts the map at that zoom's end, undoing anything moved meanwhile.
+    const internals = map as unknown as { _animatingZoom: boolean };
+    internals._animatingZoom = true;
+    wheel(-150);
+    run(200);
+    expect(map.getZoom()).toBe(4);
+    internals._animatingZoom = false;
+    map.fire('zoomend');
+    run(1000);
+    expect(map.getZoom()).toBeCloseTo(4.5, 6);
+  });
+
   it('stops at the map’s zoom limits', () => {
     map.scrollWheelZoom.enable();
     for (let i = 0; i < 10; i++) wheel(900);

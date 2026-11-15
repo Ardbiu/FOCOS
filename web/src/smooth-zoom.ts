@@ -54,6 +54,10 @@ export function easeToward(current: number, goal: number, elapsedMs: number): nu
 
 /** The parts of a Leaflet map that its own pinch zoom uses to move it without an animation. */
 interface MapInternals {
+  /** Stops a pan or a flight under way, and nothing else. */
+  _stop(): unknown;
+  /** True while Leaflet's own animated zoom (a button, a double click, a key) plays. */
+  _animatingZoom?: boolean;
   _moveStart(zoomChanged: boolean, noMoveStart: boolean): unknown;
   _move(center: L.LatLng, zoom: number): unknown;
   _moveEnd(zoomChanged: boolean): unknown;
@@ -79,6 +83,9 @@ export class SmoothWheelZoom extends L.Handler {
   private zoom = 0;
   /** The zoom at which the shapes were last drawn afresh. */
   private drawnZoom = 0;
+  /** Scrolling held while Leaflet's own zoom plays, in levels, and whether the map is being waited on. */
+  private held = 0;
+  private holding = false;
 
   constructor(map: L.Map) {
     super(map);
@@ -91,6 +98,9 @@ export class SmoothWheelZoom extends L.Handler {
 
   removeHooks(): void {
     this.owner.getContainer().removeEventListener('wheel', this.onWheel);
+    this.owner.off('zoomend', this.afterLeafletZoom);
+    this.holding = false;
+    this.held = 0;
     this.finish();
   }
 
@@ -101,16 +111,42 @@ export class SmoothWheelZoom extends L.Handler {
     event.stopPropagation();
     const change = wheelZoomChange(event);
     if (change === 0) return;
+    this.pointer = map.mouseEventToContainerPoint(event);
+    this.lastWheel = performance.now();
+    // When Leaflet's own zoom ends, Leaflet puts the map where that zoom ends, so a scroll
+    // begun while it plays would be undone. It is kept until then.
+    if ((map as unknown as MapInternals)._animatingZoom) {
+      this.held += change;
+      if (!this.holding) {
+        this.holding = true;
+        map.once('zoomend', this.afterLeafletZoom);
+      }
+      return;
+    }
+    this.zoomBy(change);
+  };
+
+  private readonly afterLeafletZoom = (): void => {
+    const change = this.held;
+    this.holding = false;
+    this.held = 0;
+    if (change !== 0 && this.enabled()) this.zoomBy(change);
+  };
+
+  /** Moves the goal by `change` levels, about the place under the pointer. */
+  private zoomBy(change: number): void {
+    const map = this.owner;
     if (!this.running) this.begin();
     this.goal = Math.max(map.getMinZoom(), Math.min(map.getMaxZoom(), this.goal + change));
-    this.pointer = map.mouseEventToContainerPoint(event);
     this.place = map.containerPointToLatLng(this.pointer);
-    this.lastWheel = performance.now();
-  };
+  }
 
   private begin(): void {
     const map = this.owner;
-    map.stop();
+    // Not `map.stop()`: that also rounds the zoom to the nearest `zoomSnap` with a short animation,
+    // and when the animation ends Leaflet puts the map back where it began, undoing the scroll
+    // made meanwhile. The map jumped back and then forward again.
+    (map as unknown as MapInternals)._stop();
     this.running = true;
     this.goal = this.zoom = this.drawnZoom = map.getZoom();
     this.center = map.getCenter();
