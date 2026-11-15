@@ -1,0 +1,4045 @@
+{
+ "generated_utc": "2026-11-13T14:27:44Z",
+ "chosen": "C2",
+ "m": 200,
+ "train_years": [
+  2012,
+  2019
+ ],
+ "test_years": [
+  2020,
+  2021
+ ],
+ "loyo": {
+  "C0": 405.51181102362204,
+  "C1": 20.78503583641461,
+  "C2": 17.242088762990136,
+  "C3": 17.65352316243139
+ },
+ "targets": {
+  "national_bias_abs_max": 0.1,
+  "province_month_mape_max": 25.0,
+  "national_month_logcorr_min": 0.95
+ },
+ "test": {
+  "harmonized": {
+   "national_month": {
+    "n": 24,
+    "bias": -0.001243691369284483,
+    "mape": 8.321863350834482,
+    "logcorr": 0.9932336415902525
+   },
+   "province_month": {
+    "n": 331,
+    "bias": -0.00895896212942382,
+    "mape": 16.97853969104378,
+    "logcorr": 0.9723696749333097
+   },
+   "tile_month": {
+    "n": 921,
+    "bias": -0.04636875910119376,
+    "mape": 22.558488273207754,
+    "logcorr": 0.9133125298734901
+   }
+  },
+  "naive": {
+   "national_month": {
+    "n": 24,
+    "bias": 4.284979718933093,
+    "mape": 458.4030779692064,
+    "logcorr": 0.9829509190741939
+   },
+   "province_month": {
+    "n": 331,
+    "bias": 4.231006576145112,
+    "mape": 432.1428571428571,
+    "logcorr": 0.9613338046269747
+   },
+   "tile_month": {
+    "n": 921,
+    "bias": 4.113500879439991,
+    "mape": 375.0,
+    "logcorr": 0.9082108989329306
+   }
+  }
+ },
+ "targets_met": {
+  "national_bias": true,
+  "province_month_mape": true,
+  "national_month_logcorr": true
+ },
+ "peak_month_agreement": {
+  "harmonized": 0.8636363636363636,
+  "naive": 0.7727272727272727,
+  "n": 44
+ },
+ "rank_corr": {
+  "national_years": 0.9428571428571427,
+  "provinces_test_years": 0.9860869565217389
+ },
+ "yearly_national": [
+  {
+   "year": 2003,
+   "aqua": 70344.0,
+   "viirs_raw": null,
+   "viirs_harmonized": null,
+   "series": 70344.0,
+   "raw_series": 72997.0
+  },
+  {
+   "year": 2004,
+   "aqua": 58714.0,
+   "viirs_raw": null,
+   "viirs_harmonized": null,
+   "series": 58714.0,
+   "raw_series": 60937.0
+  },
+  {
+   "year": 2005,
+   "aqua": 40377.0,
+   "viirs_raw": null,
+   "viirs_harmonized": null,
+   "series": 40377.0,
+   "raw_series": 41999.0
+  },
+  {
+   "year": 2006,
+   "aqua": 49437.0,
+   "viirs_raw": null,
+   "viirs_harmonized": null,
+   "series": 49437.0,
+   "raw_series": 51148.0
+  },
+  {
+   "year": 2007,
+   "aqua": 46644.0,
+   "viirs_raw": null,
+   "viirs_harmonized": null,
+   "series": 46644.0,
+   "raw_series": 48465.0
+  },
+  {
+   "year": 2008,
+   "aqua": 61752.0,
+   "viirs_raw": null,
+   "viirs_harmonized": null,
+   "series": 61752.0,
+   "raw_series": 64140.0
+  },
+  {
+   "year": 2009,
+   "aqua": 47975.0,
+   "viirs_raw": null,
+   "viirs_harmonized": null,
+   "series": 47975.0,
+   "raw_series": 49968.0
+  },
+  {
+   "year": 2010,
+   "aqua": 35928.0,
+   "viirs_raw": null,
+   "viirs_harmonized": null,
+   "series": 35928.0,
+   "raw_series": 37346.0
+  },
+  {
+   "year": 2011,
+   "aqua": 43987.0,
+   "viirs_raw": null,
+   "viirs_harmonized": null,
+   "series": 43987.0,
+   "raw_series": 45740.0
+  },
+  {
+   "year": 2012,
+   "aqua": 35929.0,
+   "viirs_raw": 164200.0,
+   "viirs_harmonized": 32476.96,
+   "series": 35419.96,
+   "raw_series": 167274.0
+  },
+  {
+   "year": 2013,
+   "aqua": 38382.0,
+   "viirs_raw": 210338.0,
+   "viirs_harmonized": 38699.57,
+   "series": 38699.57,
+   "raw_series": 210338.0
+  },
+  {
+   "year": 2014,
+   "aqua": 20166.0,
+   "viirs_raw": 108469.0,
+   "viirs_harmonized": 20580.43,
+   "series": 20580.43,
+   "raw_series": 108469.0
+  },
+  {
+   "year": 2015,
+   "aqua": 26442.0,
+   "viirs_raw": 136392.0,
+   "viirs_harmonized": 27650.76,
+   "series": 27650.76,
+   "raw_series": 136392.0
+  },
+  {
+   "year": 2016,
+   "aqua": 33124.0,
+   "viirs_raw": 162933.0,
+   "viirs_harmonized": 32017.49,
+   "series": 32017.49,
+   "raw_series": 162933.0
+  },
+  {
+   "year": 2017,
+   "aqua": 34517.0,
+   "viirs_raw": 180489.0,
+   "viirs_harmonized": 33737.95,
+   "series": 33737.95,
+   "raw_series": 180489.0
+  },
+  {
+   "year": 2018,
+   "aqua": 31199.0,
+   "viirs_raw": 165571.0,
+   "viirs_harmonized": 32192.8,
+   "series": 32192.8,
+   "raw_series": 165571.0
+  },
+  {
+   "year": 2019,
+   "aqua": 28750.0,
+   "viirs_raw": 143449.0,
+   "viirs_harmonized": 28625.21,
+   "series": 28625.21,
+   "raw_series": 143449.0
+  },
+  {
+   "year": 2020,
+   "aqua": 71819.0,
+   "viirs_raw": 400944.0,
+   "viirs_harmonized": 70368.78,
+   "series": 70368.78,
+   "raw_series": 400944.0
+  },
+  {
+   "year": 2021,
+   "aqua": 32055.0,
+   "viirs_raw": 171647.0,
+   "viirs_harmonized": 33691.48,
+   "series": 33691.48,
+   "raw_series": 171647.0
+  },
+  {
+   "year": 2022,
+   "aqua": 44322.0,
+   "viirs_raw": 279514.0,
+   "viirs_harmonized": 43583.44,
+   "series": 43583.44,
+   "raw_series": 279514.0
+  },
+  {
+   "year": 2023,
+   "aqua": 26601.0,
+   "viirs_raw": 147563.0,
+   "viirs_harmonized": 25089.13,
+   "series": 25089.13,
+   "raw_series": 147563.0
+  },
+  {
+   "year": 2024,
+   "aqua": 30216.0,
+   "viirs_raw": 142244.0,
+   "viirs_harmonized": 26963.25,
+   "series": 26963.25,
+   "raw_series": 142244.0
+  },
+  {
+   "year": 2025,
+   "aqua": 30172.0,
+   "viirs_raw": 150424.0,
+   "viirs_harmonized": 27672.47,
+   "series": 27672.47,
+   "raw_series": 150424.0
+  },
+  {
+   "year": 2026,
+   "aqua": 15524.0,
+   "viirs_raw": 87024.0,
+   "viirs_harmonized": 16911.3,
+   "series": 16911.3,
+   "raw_series": 87024.0
+  }
+ ],
+ "test_pairs": [
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2020,
+   "month": 1,
+   "aqua": 26.0,
+   "harmonized": 70.33,
+   "naive": 272.0
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "year": 2020,
+   "month": 1,
+   "aqua": 33.0,
+   "harmonized": 53.02,
+   "naive": 262.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2020,
+   "month": 1,
+   "aqua": 47.0,
+   "harmonized": 71.52,
+   "naive": 461.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2020,
+   "month": 1,
+   "aqua": 54.0,
+   "harmonized": 68.55,
+   "naive": 411.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2020,
+   "month": 1,
+   "aqua": 147.0,
+   "harmonized": 179.68,
+   "naive": 1257.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2020,
+   "month": 1,
+   "aqua": 27.0,
+   "harmonized": 31.31,
+   "naive": 171.0
+  },
+  {
+   "prov": "58",
+   "name": "Neuqu\u00e9n",
+   "year": 2020,
+   "month": 1,
+   "aqua": 35.0,
+   "harmonized": 88.53,
+   "naive": 733.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2020,
+   "month": 1,
+   "aqua": 131.0,
+   "harmonized": 141.0,
+   "naive": 944.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2020,
+   "month": 1,
+   "aqua": 55.0,
+   "harmonized": 49.77,
+   "naive": 377.0
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "year": 2020,
+   "month": 1,
+   "aqua": 26.0,
+   "harmonized": 27.08,
+   "naive": 146.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2020,
+   "month": 1,
+   "aqua": 57.0,
+   "harmonized": 156.81,
+   "naive": 754.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2020,
+   "month": 1,
+   "aqua": 91.0,
+   "harmonized": 80.72,
+   "naive": 452.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2020,
+   "month": 2,
+   "aqua": 45.0,
+   "harmonized": 80.93,
+   "naive": 377.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2020,
+   "month": 2,
+   "aqua": 293.0,
+   "harmonized": 220.11,
+   "naive": 1550.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2020,
+   "month": 2,
+   "aqua": 230.0,
+   "harmonized": 125.01,
+   "naive": 953.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2020,
+   "month": 2,
+   "aqua": 51.0,
+   "harmonized": 118.02,
+   "naive": 603.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2020,
+   "month": 2,
+   "aqua": 497.0,
+   "harmonized": 373.9,
+   "naive": 2536.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2020,
+   "month": 2,
+   "aqua": 22.0,
+   "harmonized": 25.18,
+   "naive": 187.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2020,
+   "month": 2,
+   "aqua": 39.0,
+   "harmonized": 32.97,
+   "naive": 177.0
+  },
+  {
+   "prov": "58",
+   "name": "Neuqu\u00e9n",
+   "year": 2020,
+   "month": 2,
+   "aqua": 22.0,
+   "harmonized": 74.36,
+   "naive": 579.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2020,
+   "month": 2,
+   "aqua": 65.0,
+   "harmonized": 63.84,
+   "naive": 643.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2020,
+   "month": 2,
+   "aqua": 37.0,
+   "harmonized": 31.24,
+   "naive": 227.0
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "year": 2020,
+   "month": 2,
+   "aqua": 24.0,
+   "harmonized": 14.96,
+   "naive": 69.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2020,
+   "month": 2,
+   "aqua": 357.0,
+   "harmonized": 460.46,
+   "naive": 2536.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2020,
+   "month": 2,
+   "aqua": 96.0,
+   "harmonized": 73.96,
+   "naive": 424.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2020,
+   "month": 3,
+   "aqua": 38.0,
+   "harmonized": 52.68,
+   "naive": 289.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2020,
+   "month": 3,
+   "aqua": 429.0,
+   "harmonized": 489.96,
+   "naive": 2579.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2020,
+   "month": 3,
+   "aqua": 568.0,
+   "harmonized": 557.56,
+   "naive": 3495.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2020,
+   "month": 3,
+   "aqua": 91.0,
+   "harmonized": 108.72,
+   "naive": 705.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2020,
+   "month": 3,
+   "aqua": 1574.0,
+   "harmonized": 1621.38,
+   "naive": 9592.0
+  },
+  {
+   "prov": "42",
+   "name": "La Pampa",
+   "year": 2020,
+   "month": 3,
+   "aqua": 26.0,
+   "harmonized": 16.94,
+   "naive": 90.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2020,
+   "month": 3,
+   "aqua": 73.0,
+   "harmonized": 108.04,
+   "naive": 463.0
+  },
+  {
+   "prov": "58",
+   "name": "Neuqu\u00e9n",
+   "year": 2020,
+   "month": 3,
+   "aqua": 38.0,
+   "harmonized": 55.76,
+   "naive": 709.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2020,
+   "month": 3,
+   "aqua": 74.0,
+   "harmonized": 51.07,
+   "naive": 370.0
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "year": 2020,
+   "month": 3,
+   "aqua": 59.0,
+   "harmonized": 32.04,
+   "naive": 349.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2020,
+   "month": 3,
+   "aqua": 754.0,
+   "harmonized": 846.28,
+   "naive": 4753.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2020,
+   "month": 3,
+   "aqua": 154.0,
+   "harmonized": 150.31,
+   "naive": 1012.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2020,
+   "month": 4,
+   "aqua": 75.0,
+   "harmonized": 70.79,
+   "naive": 322.0
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "year": 2020,
+   "month": 4,
+   "aqua": 35.0,
+   "harmonized": 36.9,
+   "naive": 194.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2020,
+   "month": 4,
+   "aqua": 900.0,
+   "harmonized": 796.02,
+   "naive": 4148.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2020,
+   "month": 4,
+   "aqua": 496.0,
+   "harmonized": 444.44,
+   "naive": 2288.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2020,
+   "month": 4,
+   "aqua": 120.0,
+   "harmonized": 129.57,
+   "naive": 731.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2020,
+   "month": 4,
+   "aqua": 1036.0,
+   "harmonized": 758.5,
+   "naive": 4469.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2020,
+   "month": 4,
+   "aqua": 125.0,
+   "harmonized": 136.0,
+   "naive": 591.0
+  },
+  {
+   "prov": "58",
+   "name": "Neuqu\u00e9n",
+   "year": 2020,
+   "month": 4,
+   "aqua": 103.0,
+   "harmonized": 89.86,
+   "naive": 845.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2020,
+   "month": 4,
+   "aqua": 71.0,
+   "harmonized": 51.85,
+   "naive": 248.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2020,
+   "month": 4,
+   "aqua": 888.0,
+   "harmonized": 953.28,
+   "naive": 5346.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2020,
+   "month": 4,
+   "aqua": 163.0,
+   "harmonized": 120.12,
+   "naive": 806.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2020,
+   "month": 5,
+   "aqua": 69.0,
+   "harmonized": 77.9,
+   "naive": 339.0
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "year": 2020,
+   "month": 5,
+   "aqua": 100.0,
+   "harmonized": 101.46,
+   "naive": 617.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2020,
+   "month": 5,
+   "aqua": 510.0,
+   "harmonized": 487.56,
+   "naive": 2535.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2020,
+   "month": 5,
+   "aqua": 313.0,
+   "harmonized": 295.97,
+   "naive": 1570.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2020,
+   "month": 5,
+   "aqua": 199.0,
+   "harmonized": 212.85,
+   "naive": 1262.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2020,
+   "month": 5,
+   "aqua": 797.0,
+   "harmonized": 585.88,
+   "naive": 3355.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2020,
+   "month": 5,
+   "aqua": 80.0,
+   "harmonized": 61.87,
+   "naive": 252.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2020,
+   "month": 5,
+   "aqua": 33.0,
+   "harmonized": 34.04,
+   "naive": 162.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2020,
+   "month": 5,
+   "aqua": 21.0,
+   "harmonized": 22.66,
+   "naive": 107.0
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "year": 2020,
+   "month": 5,
+   "aqua": 23.0,
+   "harmonized": 13.12,
+   "naive": 162.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2020,
+   "month": 5,
+   "aqua": 1023.0,
+   "harmonized": 1043.85,
+   "naive": 6212.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2020,
+   "month": 5,
+   "aqua": 278.0,
+   "harmonized": 254.97,
+   "naive": 1597.0
+  },
+  {
+   "prov": "90",
+   "name": "Tucum\u00e1n",
+   "year": 2020,
+   "month": 5,
+   "aqua": 44.0,
+   "harmonized": 36.5,
+   "naive": 184.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2020,
+   "month": 6,
+   "aqua": 114.0,
+   "harmonized": 107.63,
+   "naive": 369.0
+  },
+  {
+   "prov": "10",
+   "name": "Catamarca",
+   "year": 2020,
+   "month": 6,
+   "aqua": 23.0,
+   "harmonized": 25.01,
+   "naive": 121.0
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "year": 2020,
+   "month": 6,
+   "aqua": 66.0,
+   "harmonized": 65.99,
+   "naive": 295.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2020,
+   "month": 6,
+   "aqua": 421.0,
+   "harmonized": 407.25,
+   "naive": 2232.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2020,
+   "month": 6,
+   "aqua": 521.0,
+   "harmonized": 592.97,
+   "naive": 2737.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2020,
+   "month": 6,
+   "aqua": 206.0,
+   "harmonized": 256.22,
+   "naive": 1378.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2020,
+   "month": 6,
+   "aqua": 500.0,
+   "harmonized": 531.34,
+   "naive": 2465.0
+  },
+  {
+   "prov": "38",
+   "name": "Jujuy",
+   "year": 2020,
+   "month": 6,
+   "aqua": 34.0,
+   "harmonized": 26.31,
+   "naive": 88.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2020,
+   "month": 6,
+   "aqua": 22.0,
+   "harmonized": 40.84,
+   "naive": 133.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2020,
+   "month": 6,
+   "aqua": 106.0,
+   "harmonized": 139.34,
+   "naive": 478.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2020,
+   "month": 6,
+   "aqua": 62.0,
+   "harmonized": 76.26,
+   "naive": 312.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2020,
+   "month": 6,
+   "aqua": 722.0,
+   "harmonized": 852.14,
+   "naive": 3875.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2020,
+   "month": 6,
+   "aqua": 356.0,
+   "harmonized": 335.46,
+   "naive": 1557.0
+  },
+  {
+   "prov": "90",
+   "name": "Tucum\u00e1n",
+   "year": 2020,
+   "month": 6,
+   "aqua": 87.0,
+   "harmonized": 107.57,
+   "naive": 377.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2020,
+   "month": 7,
+   "aqua": 187.0,
+   "harmonized": 196.56,
+   "naive": 758.0
+  },
+  {
+   "prov": "10",
+   "name": "Catamarca",
+   "year": 2020,
+   "month": 7,
+   "aqua": 43.0,
+   "harmonized": 38.57,
+   "naive": 225.0
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "year": 2020,
+   "month": 7,
+   "aqua": 162.0,
+   "harmonized": 125.32,
+   "naive": 569.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2020,
+   "month": 7,
+   "aqua": 804.5,
+   "harmonized": 898.22,
+   "naive": 4202.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2020,
+   "month": 7,
+   "aqua": 1113.5,
+   "harmonized": 921.25,
+   "naive": 4040.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2020,
+   "month": 7,
+   "aqua": 1013.5,
+   "harmonized": 1124.02,
+   "naive": 6551.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2020,
+   "month": 7,
+   "aqua": 1002.0,
+   "harmonized": 902.82,
+   "naive": 4500.0
+  },
+  {
+   "prov": "38",
+   "name": "Jujuy",
+   "year": 2020,
+   "month": 7,
+   "aqua": 32.0,
+   "harmonized": 39.86,
+   "naive": 128.0
+  },
+  {
+   "prov": "46",
+   "name": "La Rioja",
+   "year": 2020,
+   "month": 7,
+   "aqua": 22.0,
+   "harmonized": 25.91,
+   "naive": 123.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2020,
+   "month": 7,
+   "aqua": 27.0,
+   "harmonized": 33.98,
+   "naive": 117.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2020,
+   "month": 7,
+   "aqua": 109.0,
+   "harmonized": 123.06,
+   "naive": 416.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2020,
+   "month": 7,
+   "aqua": 143.0,
+   "harmonized": 192.27,
+   "naive": 989.0
+  },
+  {
+   "prov": "70",
+   "name": "San Juan",
+   "year": 2020,
+   "month": 7,
+   "aqua": 21.0,
+   "harmonized": 26.46,
+   "naive": 96.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2020,
+   "month": 7,
+   "aqua": 1899.0,
+   "harmonized": 2394.38,
+   "naive": 10796.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2020,
+   "month": 7,
+   "aqua": 942.5,
+   "harmonized": 805.43,
+   "naive": 3637.0
+  },
+  {
+   "prov": "90",
+   "name": "Tucum\u00e1n",
+   "year": 2020,
+   "month": 7,
+   "aqua": 449.0,
+   "harmonized": 401.79,
+   "naive": 1556.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2020,
+   "month": 8,
+   "aqua": 164.0,
+   "harmonized": 177.43,
+   "naive": 741.0
+  },
+  {
+   "prov": "10",
+   "name": "Catamarca",
+   "year": 2020,
+   "month": 8,
+   "aqua": 46.0,
+   "harmonized": 44.88,
+   "naive": 326.0
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "year": 2020,
+   "month": 8,
+   "aqua": 191.5,
+   "harmonized": 103.24,
+   "naive": 648.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2020,
+   "month": 8,
+   "aqua": 1068.0,
+   "harmonized": 1216.02,
+   "naive": 6364.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2020,
+   "month": 8,
+   "aqua": 1431.5,
+   "harmonized": 1309.08,
+   "naive": 6935.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2020,
+   "month": 8,
+   "aqua": 969.0,
+   "harmonized": 930.03,
+   "naive": 6562.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2020,
+   "month": 8,
+   "aqua": 1684.0,
+   "harmonized": 1534.09,
+   "naive": 7708.0
+  },
+  {
+   "prov": "38",
+   "name": "Jujuy",
+   "year": 2020,
+   "month": 8,
+   "aqua": 27.0,
+   "harmonized": 40.37,
+   "naive": 150.0
+  },
+  {
+   "prov": "42",
+   "name": "La Pampa",
+   "year": 2020,
+   "month": 8,
+   "aqua": 72.5,
+   "harmonized": 58.48,
+   "naive": 256.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2020,
+   "month": 8,
+   "aqua": 90.0,
+   "harmonized": 93.7,
+   "naive": 327.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2020,
+   "month": 8,
+   "aqua": 351.0,
+   "harmonized": 416.41,
+   "naive": 1429.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2020,
+   "month": 8,
+   "aqua": 29.5,
+   "harmonized": 40.92,
+   "naive": 133.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2020,
+   "month": 8,
+   "aqua": 210.0,
+   "harmonized": 223.1,
+   "naive": 911.0
+  },
+  {
+   "prov": "70",
+   "name": "San Juan",
+   "year": 2020,
+   "month": 8,
+   "aqua": 50.0,
+   "harmonized": 51.41,
+   "naive": 258.0
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "year": 2020,
+   "month": 8,
+   "aqua": 30.0,
+   "harmonized": 22.87,
+   "naive": 130.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2020,
+   "month": 8,
+   "aqua": 2067.5,
+   "harmonized": 2451.46,
+   "naive": 13474.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2020,
+   "month": 8,
+   "aqua": 1154.5,
+   "harmonized": 838.83,
+   "naive": 4034.0
+  },
+  {
+   "prov": "90",
+   "name": "Tucum\u00e1n",
+   "year": 2020,
+   "month": 8,
+   "aqua": 357.0,
+   "harmonized": 265.52,
+   "naive": 1088.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2020,
+   "month": 9,
+   "aqua": 254.0,
+   "harmonized": 263.19,
+   "naive": 1357.0
+  },
+  {
+   "prov": "10",
+   "name": "Catamarca",
+   "year": 2020,
+   "month": 9,
+   "aqua": 61.0,
+   "harmonized": 39.01,
+   "naive": 248.0
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "year": 2020,
+   "month": 9,
+   "aqua": 690.5,
+   "harmonized": 471.23,
+   "naive": 5630.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2020,
+   "month": 9,
+   "aqua": 935.0,
+   "harmonized": 770.58,
+   "naive": 4547.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2020,
+   "month": 9,
+   "aqua": 2426.0,
+   "harmonized": 1850.07,
+   "naive": 10766.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2020,
+   "month": 9,
+   "aqua": 701.0,
+   "harmonized": 557.15,
+   "naive": 4874.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2020,
+   "month": 9,
+   "aqua": 3050.0,
+   "harmonized": 2043.45,
+   "naive": 11819.0
+  },
+  {
+   "prov": "38",
+   "name": "Jujuy",
+   "year": 2020,
+   "month": 9,
+   "aqua": 85.0,
+   "harmonized": 71.69,
+   "naive": 399.0
+  },
+  {
+   "prov": "42",
+   "name": "La Pampa",
+   "year": 2020,
+   "month": 9,
+   "aqua": 71.0,
+   "harmonized": 53.65,
+   "naive": 351.0
+  },
+  {
+   "prov": "46",
+   "name": "La Rioja",
+   "year": 2020,
+   "month": 9,
+   "aqua": 27.0,
+   "harmonized": 27.35,
+   "naive": 149.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2020,
+   "month": 9,
+   "aqua": 100.0,
+   "harmonized": 121.97,
+   "naive": 543.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2020,
+   "month": 9,
+   "aqua": 182.0,
+   "harmonized": 196.01,
+   "naive": 817.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2020,
+   "month": 9,
+   "aqua": 69.0,
+   "harmonized": 73.01,
+   "naive": 325.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2020,
+   "month": 9,
+   "aqua": 762.0,
+   "harmonized": 681.54,
+   "naive": 3880.0
+  },
+  {
+   "prov": "70",
+   "name": "San Juan",
+   "year": 2020,
+   "month": 9,
+   "aqua": 55.0,
+   "harmonized": 55.82,
+   "naive": 207.0
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "year": 2020,
+   "month": 9,
+   "aqua": 370.5,
+   "harmonized": 224.06,
+   "naive": 2140.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2020,
+   "month": 9,
+   "aqua": 2243.0,
+   "harmonized": 2382.06,
+   "naive": 12995.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2020,
+   "month": 9,
+   "aqua": 1493.0,
+   "harmonized": 1379.01,
+   "naive": 7201.0
+  },
+  {
+   "prov": "90",
+   "name": "Tucum\u00e1n",
+   "year": 2020,
+   "month": 9,
+   "aqua": 359.0,
+   "harmonized": 300.3,
+   "naive": 1647.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2020,
+   "month": 10,
+   "aqua": 88.0,
+   "harmonized": 132.51,
+   "naive": 574.0
+  },
+  {
+   "prov": "10",
+   "name": "Catamarca",
+   "year": 2020,
+   "month": 10,
+   "aqua": 38.0,
+   "harmonized": 39.92,
+   "naive": 307.0
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "year": 2020,
+   "month": 10,
+   "aqua": 633.5,
+   "harmonized": 406.17,
+   "naive": 4165.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2020,
+   "month": 10,
+   "aqua": 275.0,
+   "harmonized": 361.31,
+   "naive": 2247.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2020,
+   "month": 10,
+   "aqua": 785.0,
+   "harmonized": 933.1,
+   "naive": 6355.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2020,
+   "month": 10,
+   "aqua": 468.0,
+   "harmonized": 382.19,
+   "naive": 2874.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2020,
+   "month": 10,
+   "aqua": 2691.0,
+   "harmonized": 2301.35,
+   "naive": 17321.0
+  },
+  {
+   "prov": "38",
+   "name": "Jujuy",
+   "year": 2020,
+   "month": 10,
+   "aqua": 188.0,
+   "harmonized": 240.46,
+   "naive": 1632.0
+  },
+  {
+   "prov": "46",
+   "name": "La Rioja",
+   "year": 2020,
+   "month": 10,
+   "aqua": 28.0,
+   "harmonized": 39.68,
+   "naive": 263.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2020,
+   "month": 10,
+   "aqua": 52.0,
+   "harmonized": 63.93,
+   "naive": 325.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2020,
+   "month": 10,
+   "aqua": 84.0,
+   "harmonized": 93.65,
+   "naive": 410.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2020,
+   "month": 10,
+   "aqua": 27.0,
+   "harmonized": 32.64,
+   "naive": 222.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2020,
+   "month": 10,
+   "aqua": 902.0,
+   "harmonized": 1034.39,
+   "naive": 6023.0
+  },
+  {
+   "prov": "70",
+   "name": "San Juan",
+   "year": 2020,
+   "month": 10,
+   "aqua": 31.0,
+   "harmonized": 36.89,
+   "naive": 175.0
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "year": 2020,
+   "month": 10,
+   "aqua": 313.0,
+   "harmonized": 222.73,
+   "naive": 2175.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2020,
+   "month": 10,
+   "aqua": 631.0,
+   "harmonized": 954.43,
+   "naive": 4820.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2020,
+   "month": 10,
+   "aqua": 661.5,
+   "harmonized": 546.13,
+   "naive": 2702.0
+  },
+  {
+   "prov": "90",
+   "name": "Tucum\u00e1n",
+   "year": 2020,
+   "month": 10,
+   "aqua": 112.0,
+   "harmonized": 107.45,
+   "naive": 690.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2020,
+   "month": 11,
+   "aqua": 33.0,
+   "harmonized": 52.21,
+   "naive": 303.0
+  },
+  {
+   "prov": "10",
+   "name": "Catamarca",
+   "year": 2020,
+   "month": 11,
+   "aqua": 21.0,
+   "harmonized": 19.91,
+   "naive": 124.0
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "year": 2020,
+   "month": 11,
+   "aqua": 89.0,
+   "harmonized": 76.28,
+   "naive": 532.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2020,
+   "month": 11,
+   "aqua": 532.0,
+   "harmonized": 454.13,
+   "naive": 3369.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2020,
+   "month": 11,
+   "aqua": 321.0,
+   "harmonized": 380.55,
+   "naive": 2165.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2020,
+   "month": 11,
+   "aqua": 233.0,
+   "harmonized": 265.9,
+   "naive": 2052.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2020,
+   "month": 11,
+   "aqua": 503.0,
+   "harmonized": 501.78,
+   "naive": 2988.0
+  },
+  {
+   "prov": "38",
+   "name": "Jujuy",
+   "year": 2020,
+   "month": 11,
+   "aqua": 167.0,
+   "harmonized": 178.04,
+   "naive": 1401.0
+  },
+  {
+   "prov": "46",
+   "name": "La Rioja",
+   "year": 2020,
+   "month": 11,
+   "aqua": 33.0,
+   "harmonized": 17.44,
+   "naive": 175.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2020,
+   "month": 11,
+   "aqua": 24.0,
+   "harmonized": 18.98,
+   "naive": 126.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2020,
+   "month": 11,
+   "aqua": 148.0,
+   "harmonized": 187.34,
+   "naive": 1140.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2020,
+   "month": 11,
+   "aqua": 482.0,
+   "harmonized": 402.44,
+   "naive": 2530.0
+  },
+  {
+   "prov": "70",
+   "name": "San Juan",
+   "year": 2020,
+   "month": 11,
+   "aqua": 38.0,
+   "harmonized": 38.89,
+   "naive": 228.0
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "year": 2020,
+   "month": 11,
+   "aqua": 223.0,
+   "harmonized": 158.38,
+   "naive": 1587.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2020,
+   "month": 11,
+   "aqua": 271.0,
+   "harmonized": 510.95,
+   "naive": 2512.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2020,
+   "month": 11,
+   "aqua": 396.0,
+   "harmonized": 349.19,
+   "naive": 1713.0
+  },
+  {
+   "prov": "90",
+   "name": "Tucum\u00e1n",
+   "year": 2020,
+   "month": 11,
+   "aqua": 53.0,
+   "harmonized": 49.46,
+   "naive": 272.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2020,
+   "month": 12,
+   "aqua": 54.0,
+   "harmonized": 95.64,
+   "naive": 471.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2020,
+   "month": 12,
+   "aqua": 35.0,
+   "harmonized": 36.54,
+   "naive": 243.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2020,
+   "month": 12,
+   "aqua": 69.0,
+   "harmonized": 105.37,
+   "naive": 678.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2020,
+   "month": 12,
+   "aqua": 82.0,
+   "harmonized": 121.76,
+   "naive": 756.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2020,
+   "month": 12,
+   "aqua": 65.0,
+   "harmonized": 49.62,
+   "naive": 330.0
+  },
+  {
+   "prov": "42",
+   "name": "La Pampa",
+   "year": 2020,
+   "month": 12,
+   "aqua": 89.0,
+   "harmonized": 86.93,
+   "naive": 697.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2020,
+   "month": 12,
+   "aqua": 31.0,
+   "harmonized": 37.57,
+   "naive": 284.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2020,
+   "month": 12,
+   "aqua": 24.0,
+   "harmonized": 39.21,
+   "naive": 229.0
+  },
+  {
+   "prov": "58",
+   "name": "Neuqu\u00e9n",
+   "year": 2020,
+   "month": 12,
+   "aqua": 100.0,
+   "harmonized": 76.24,
+   "naive": 565.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2020,
+   "month": 12,
+   "aqua": 23.0,
+   "harmonized": 33.97,
+   "naive": 397.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2020,
+   "month": 12,
+   "aqua": 86.0,
+   "harmonized": 87.8,
+   "naive": 651.0
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "year": 2020,
+   "month": 12,
+   "aqua": 74.0,
+   "harmonized": 99.3,
+   "naive": 750.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2020,
+   "month": 12,
+   "aqua": 133.0,
+   "harmonized": 242.81,
+   "naive": 1356.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2020,
+   "month": 12,
+   "aqua": 116.0,
+   "harmonized": 106.09,
+   "naive": 735.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2021,
+   "month": 1,
+   "aqua": 103.0,
+   "harmonized": 114.22,
+   "naive": 720.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2021,
+   "month": 1,
+   "aqua": 55.0,
+   "harmonized": 67.77,
+   "naive": 568.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2021,
+   "month": 1,
+   "aqua": 49.5,
+   "harmonized": 66.48,
+   "naive": 429.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2021,
+   "month": 1,
+   "aqua": 146.0,
+   "harmonized": 163.19,
+   "naive": 1113.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2021,
+   "month": 1,
+   "aqua": 23.0,
+   "harmonized": 23.04,
+   "naive": 115.0
+  },
+  {
+   "prov": "42",
+   "name": "La Pampa",
+   "year": 2021,
+   "month": 1,
+   "aqua": 26.0,
+   "harmonized": 41.5,
+   "naive": 247.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2021,
+   "month": 1,
+   "aqua": 73.0,
+   "harmonized": 60.38,
+   "naive": 344.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2021,
+   "month": 1,
+   "aqua": 102.0,
+   "harmonized": 203.94,
+   "naive": 1206.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2021,
+   "month": 1,
+   "aqua": 49.5,
+   "harmonized": 43.87,
+   "naive": 330.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2021,
+   "month": 2,
+   "aqua": 61.0,
+   "harmonized": 83.51,
+   "naive": 495.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2021,
+   "month": 2,
+   "aqua": 78.0,
+   "harmonized": 54.73,
+   "naive": 374.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2021,
+   "month": 2,
+   "aqua": 62.0,
+   "harmonized": 59.12,
+   "naive": 373.0
+  },
+  {
+   "prov": "26",
+   "name": "Chubut",
+   "year": 2021,
+   "month": 2,
+   "aqua": 57.0,
+   "harmonized": 49.52,
+   "naive": 400.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2021,
+   "month": 2,
+   "aqua": 94.0,
+   "harmonized": 93.72,
+   "naive": 605.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2021,
+   "month": 2,
+   "aqua": 23.0,
+   "harmonized": 29.04,
+   "naive": 183.0
+  },
+  {
+   "prov": "42",
+   "name": "La Pampa",
+   "year": 2021,
+   "month": 2,
+   "aqua": 69.0,
+   "harmonized": 45.88,
+   "naive": 264.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2021,
+   "month": 2,
+   "aqua": 50.0,
+   "harmonized": 58.96,
+   "naive": 327.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2021,
+   "month": 2,
+   "aqua": 43.0,
+   "harmonized": 46.36,
+   "naive": 295.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2021,
+   "month": 2,
+   "aqua": 106.0,
+   "harmonized": 154.02,
+   "naive": 777.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2021,
+   "month": 2,
+   "aqua": 27.0,
+   "harmonized": 29.08,
+   "naive": 158.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2021,
+   "month": 3,
+   "aqua": 97.0,
+   "harmonized": 89.5,
+   "naive": 719.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2021,
+   "month": 3,
+   "aqua": 135.0,
+   "harmonized": 205.01,
+   "naive": 1122.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2021,
+   "month": 3,
+   "aqua": 81.0,
+   "harmonized": 72.05,
+   "naive": 483.0
+  },
+  {
+   "prov": "26",
+   "name": "Chubut",
+   "year": 2021,
+   "month": 3,
+   "aqua": 45.0,
+   "harmonized": 45.88,
+   "naive": 319.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2021,
+   "month": 3,
+   "aqua": 88.0,
+   "harmonized": 93.7,
+   "naive": 856.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2021,
+   "month": 3,
+   "aqua": 88.0,
+   "harmonized": 89.56,
+   "naive": 468.0
+  },
+  {
+   "prov": "42",
+   "name": "La Pampa",
+   "year": 2021,
+   "month": 3,
+   "aqua": 56.0,
+   "harmonized": 62.39,
+   "naive": 335.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2021,
+   "month": 3,
+   "aqua": 79.0,
+   "harmonized": 67.74,
+   "naive": 324.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2021,
+   "month": 3,
+   "aqua": 65.0,
+   "harmonized": 54.83,
+   "naive": 544.0
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "year": 2021,
+   "month": 3,
+   "aqua": 66.0,
+   "harmonized": 49.82,
+   "naive": 654.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2021,
+   "month": 3,
+   "aqua": 94.0,
+   "harmonized": 140.53,
+   "naive": 805.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2021,
+   "month": 3,
+   "aqua": 32.0,
+   "harmonized": 40.75,
+   "naive": 281.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2021,
+   "month": 4,
+   "aqua": 43.0,
+   "harmonized": 56.67,
+   "naive": 279.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2021,
+   "month": 4,
+   "aqua": 179.0,
+   "harmonized": 188.58,
+   "naive": 987.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2021,
+   "month": 4,
+   "aqua": 59.0,
+   "harmonized": 58.97,
+   "naive": 370.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2021,
+   "month": 4,
+   "aqua": 115.0,
+   "harmonized": 111.16,
+   "naive": 474.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2021,
+   "month": 4,
+   "aqua": 30.0,
+   "harmonized": 19.7,
+   "naive": 83.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2021,
+   "month": 4,
+   "aqua": 83.0,
+   "harmonized": 111.87,
+   "naive": 602.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2021,
+   "month": 4,
+   "aqua": 50.0,
+   "harmonized": 51.29,
+   "naive": 269.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2021,
+   "month": 5,
+   "aqua": 95.0,
+   "harmonized": 99.31,
+   "naive": 449.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2021,
+   "month": 5,
+   "aqua": 260.0,
+   "harmonized": 201.24,
+   "naive": 1057.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2021,
+   "month": 5,
+   "aqua": 45.0,
+   "harmonized": 43.01,
+   "naive": 209.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2021,
+   "month": 5,
+   "aqua": 182.0,
+   "harmonized": 118.04,
+   "naive": 805.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2021,
+   "month": 5,
+   "aqua": 28.0,
+   "harmonized": 34.12,
+   "naive": 150.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2021,
+   "month": 5,
+   "aqua": 109.0,
+   "harmonized": 105.11,
+   "naive": 425.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2021,
+   "month": 5,
+   "aqua": 24.0,
+   "harmonized": 26.85,
+   "naive": 161.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2021,
+   "month": 5,
+   "aqua": 236.0,
+   "harmonized": 182.93,
+   "naive": 950.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2021,
+   "month": 5,
+   "aqua": 110.0,
+   "harmonized": 87.71,
+   "naive": 530.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2021,
+   "month": 6,
+   "aqua": 78.0,
+   "harmonized": 94.8,
+   "naive": 343.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2021,
+   "month": 6,
+   "aqua": 136.0,
+   "harmonized": 156.28,
+   "naive": 680.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2021,
+   "month": 6,
+   "aqua": 43.0,
+   "harmonized": 63.94,
+   "naive": 206.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2021,
+   "month": 6,
+   "aqua": 71.0,
+   "harmonized": 79.64,
+   "naive": 369.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2021,
+   "month": 6,
+   "aqua": 36.0,
+   "harmonized": 48.6,
+   "naive": 175.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2021,
+   "month": 6,
+   "aqua": 39.0,
+   "harmonized": 30.6,
+   "naive": 137.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2021,
+   "month": 6,
+   "aqua": 22.0,
+   "harmonized": 53.79,
+   "naive": 198.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2021,
+   "month": 6,
+   "aqua": 118.0,
+   "harmonized": 207.16,
+   "naive": 655.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2021,
+   "month": 6,
+   "aqua": 127.0,
+   "harmonized": 153.63,
+   "naive": 597.0
+  },
+  {
+   "prov": "90",
+   "name": "Tucum\u00e1n",
+   "year": 2021,
+   "month": 6,
+   "aqua": 44.0,
+   "harmonized": 58.91,
+   "naive": 182.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2021,
+   "month": 7,
+   "aqua": 236.5,
+   "harmonized": 254.08,
+   "naive": 921.0
+  },
+  {
+   "prov": "10",
+   "name": "Catamarca",
+   "year": 2021,
+   "month": 7,
+   "aqua": 27.0,
+   "harmonized": 31.28,
+   "naive": 149.0
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "year": 2021,
+   "month": 7,
+   "aqua": 92.0,
+   "harmonized": 87.37,
+   "naive": 373.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2021,
+   "month": 7,
+   "aqua": 757.0,
+   "harmonized": 738.34,
+   "naive": 3327.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2021,
+   "month": 7,
+   "aqua": 485.0,
+   "harmonized": 511.48,
+   "naive": 1886.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2021,
+   "month": 7,
+   "aqua": 247.0,
+   "harmonized": 267.47,
+   "naive": 1494.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2021,
+   "month": 7,
+   "aqua": 715.0,
+   "harmonized": 767.36,
+   "naive": 3668.0
+  },
+  {
+   "prov": "38",
+   "name": "Jujuy",
+   "year": 2021,
+   "month": 7,
+   "aqua": 30.0,
+   "harmonized": 41.03,
+   "naive": 125.0
+  },
+  {
+   "prov": "42",
+   "name": "La Pampa",
+   "year": 2021,
+   "month": 7,
+   "aqua": 45.0,
+   "harmonized": 39.36,
+   "naive": 109.0
+  },
+  {
+   "prov": "46",
+   "name": "La Rioja",
+   "year": 2021,
+   "month": 7,
+   "aqua": 29.0,
+   "harmonized": 29.26,
+   "naive": 164.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2021,
+   "month": 7,
+   "aqua": 86.0,
+   "harmonized": 116.84,
+   "naive": 421.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2021,
+   "month": 7,
+   "aqua": 262.0,
+   "harmonized": 332.26,
+   "naive": 1117.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2021,
+   "month": 7,
+   "aqua": 45.0,
+   "harmonized": 61.6,
+   "naive": 201.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2021,
+   "month": 7,
+   "aqua": 141.0,
+   "harmonized": 188.88,
+   "naive": 678.0
+  },
+  {
+   "prov": "70",
+   "name": "San Juan",
+   "year": 2021,
+   "month": 7,
+   "aqua": 35.0,
+   "harmonized": 38.96,
+   "naive": 137.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2021,
+   "month": 7,
+   "aqua": 1062.5,
+   "harmonized": 1233.75,
+   "naive": 5127.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2021,
+   "month": 7,
+   "aqua": 766.0,
+   "harmonized": 704.87,
+   "naive": 2777.0
+  },
+  {
+   "prov": "90",
+   "name": "Tucum\u00e1n",
+   "year": 2021,
+   "month": 7,
+   "aqua": 301.0,
+   "harmonized": 271.63,
+   "naive": 1054.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2021,
+   "month": 8,
+   "aqua": 364.0,
+   "harmonized": 369.22,
+   "naive": 1634.0
+  },
+  {
+   "prov": "10",
+   "name": "Catamarca",
+   "year": 2021,
+   "month": 8,
+   "aqua": 58.0,
+   "harmonized": 50.35,
+   "naive": 271.0
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "year": 2021,
+   "month": 8,
+   "aqua": 92.0,
+   "harmonized": 100.5,
+   "naive": 467.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2021,
+   "month": 8,
+   "aqua": 976.0,
+   "harmonized": 1079.18,
+   "naive": 4924.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2021,
+   "month": 8,
+   "aqua": 1020.0,
+   "harmonized": 929.82,
+   "naive": 4441.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2021,
+   "month": 8,
+   "aqua": 550.0,
+   "harmonized": 618.2,
+   "naive": 3675.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2021,
+   "month": 8,
+   "aqua": 1838.0,
+   "harmonized": 1529.74,
+   "naive": 7765.0
+  },
+  {
+   "prov": "38",
+   "name": "Jujuy",
+   "year": 2021,
+   "month": 8,
+   "aqua": 39.0,
+   "harmonized": 52.91,
+   "naive": 163.0
+  },
+  {
+   "prov": "42",
+   "name": "La Pampa",
+   "year": 2021,
+   "month": 8,
+   "aqua": 91.0,
+   "harmonized": 99.36,
+   "naive": 386.0
+  },
+  {
+   "prov": "46",
+   "name": "La Rioja",
+   "year": 2021,
+   "month": 8,
+   "aqua": 25.0,
+   "harmonized": 29.24,
+   "naive": 118.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2021,
+   "month": 8,
+   "aqua": 65.0,
+   "harmonized": 113.24,
+   "naive": 393.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2021,
+   "month": 8,
+   "aqua": 471.0,
+   "harmonized": 390.02,
+   "naive": 1472.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2021,
+   "month": 8,
+   "aqua": 97.0,
+   "harmonized": 103.3,
+   "naive": 373.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2021,
+   "month": 8,
+   "aqua": 333.0,
+   "harmonized": 357.91,
+   "naive": 1545.0
+  },
+  {
+   "prov": "70",
+   "name": "San Juan",
+   "year": 2021,
+   "month": 8,
+   "aqua": 88.0,
+   "harmonized": 92.77,
+   "naive": 413.0
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "year": 2021,
+   "month": 8,
+   "aqua": 44.0,
+   "harmonized": 48.26,
+   "naive": 291.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2021,
+   "month": 8,
+   "aqua": 1486.0,
+   "harmonized": 1887.09,
+   "naive": 8134.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2021,
+   "month": 8,
+   "aqua": 1152.0,
+   "harmonized": 984.34,
+   "naive": 4426.0
+  },
+  {
+   "prov": "90",
+   "name": "Tucum\u00e1n",
+   "year": 2021,
+   "month": 8,
+   "aqua": 448.0,
+   "harmonized": 389.67,
+   "naive": 1608.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2021,
+   "month": 9,
+   "aqua": 92.0,
+   "harmonized": 122.31,
+   "naive": 492.0
+  },
+  {
+   "prov": "10",
+   "name": "Catamarca",
+   "year": 2021,
+   "month": 9,
+   "aqua": 34.0,
+   "harmonized": 28.26,
+   "naive": 169.0
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "year": 2021,
+   "month": 9,
+   "aqua": 56.0,
+   "harmonized": 47.36,
+   "naive": 256.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2021,
+   "month": 9,
+   "aqua": 314.0,
+   "harmonized": 330.17,
+   "naive": 1795.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2021,
+   "month": 9,
+   "aqua": 604.0,
+   "harmonized": 564.05,
+   "naive": 2939.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2021,
+   "month": 9,
+   "aqua": 138.0,
+   "harmonized": 148.97,
+   "naive": 1131.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2021,
+   "month": 9,
+   "aqua": 731.0,
+   "harmonized": 718.92,
+   "naive": 4013.0
+  },
+  {
+   "prov": "38",
+   "name": "Jujuy",
+   "year": 2021,
+   "month": 9,
+   "aqua": 23.0,
+   "harmonized": 21.32,
+   "naive": 100.0
+  },
+  {
+   "prov": "42",
+   "name": "La Pampa",
+   "year": 2021,
+   "month": 9,
+   "aqua": 44.0,
+   "harmonized": 37.92,
+   "naive": 187.0
+  },
+  {
+   "prov": "46",
+   "name": "La Rioja",
+   "year": 2021,
+   "month": 9,
+   "aqua": 26.0,
+   "harmonized": 25.0,
+   "naive": 166.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2021,
+   "month": 9,
+   "aqua": 70.0,
+   "harmonized": 104.92,
+   "naive": 562.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2021,
+   "month": 9,
+   "aqua": 248.0,
+   "harmonized": 170.06,
+   "naive": 743.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2021,
+   "month": 9,
+   "aqua": 63.0,
+   "harmonized": 66.77,
+   "naive": 291.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2021,
+   "month": 9,
+   "aqua": 262.0,
+   "harmonized": 243.49,
+   "naive": 1353.0
+  },
+  {
+   "prov": "70",
+   "name": "San Juan",
+   "year": 2021,
+   "month": 9,
+   "aqua": 28.0,
+   "harmonized": 48.1,
+   "naive": 186.0
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "year": 2021,
+   "month": 9,
+   "aqua": 45.0,
+   "harmonized": 26.83,
+   "naive": 147.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2021,
+   "month": 9,
+   "aqua": 676.0,
+   "harmonized": 951.83,
+   "naive": 4312.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2021,
+   "month": 9,
+   "aqua": 807.0,
+   "harmonized": 701.43,
+   "naive": 3161.0
+  },
+  {
+   "prov": "90",
+   "name": "Tucum\u00e1n",
+   "year": 2021,
+   "month": 9,
+   "aqua": 172.0,
+   "harmonized": 194.54,
+   "naive": 995.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2021,
+   "month": 10,
+   "aqua": 63.0,
+   "harmonized": 101.54,
+   "naive": 473.0
+  },
+  {
+   "prov": "10",
+   "name": "Catamarca",
+   "year": 2021,
+   "month": 10,
+   "aqua": 116.0,
+   "harmonized": 61.59,
+   "naive": 530.0
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "year": 2021,
+   "month": 10,
+   "aqua": 372.0,
+   "harmonized": 239.89,
+   "naive": 2018.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2021,
+   "month": 10,
+   "aqua": 228.0,
+   "harmonized": 234.44,
+   "naive": 1312.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2021,
+   "month": 10,
+   "aqua": 305.0,
+   "harmonized": 380.03,
+   "naive": 1843.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2021,
+   "month": 10,
+   "aqua": 151.0,
+   "harmonized": 164.9,
+   "naive": 1048.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2021,
+   "month": 10,
+   "aqua": 214.0,
+   "harmonized": 259.71,
+   "naive": 1231.0
+  },
+  {
+   "prov": "38",
+   "name": "Jujuy",
+   "year": 2021,
+   "month": 10,
+   "aqua": 96.0,
+   "harmonized": 112.01,
+   "naive": 866.0
+  },
+  {
+   "prov": "46",
+   "name": "La Rioja",
+   "year": 2021,
+   "month": 10,
+   "aqua": 175.0,
+   "harmonized": 175.89,
+   "naive": 1595.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2021,
+   "month": 10,
+   "aqua": 39.0,
+   "harmonized": 54.8,
+   "naive": 257.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2021,
+   "month": 10,
+   "aqua": 29.0,
+   "harmonized": 50.23,
+   "naive": 257.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2021,
+   "month": 10,
+   "aqua": 41.0,
+   "harmonized": 33.87,
+   "naive": 170.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2021,
+   "month": 10,
+   "aqua": 576.0,
+   "harmonized": 576.98,
+   "naive": 3376.0
+  },
+  {
+   "prov": "70",
+   "name": "San Juan",
+   "year": 2021,
+   "month": 10,
+   "aqua": 35.0,
+   "harmonized": 31.18,
+   "naive": 119.0
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "year": 2021,
+   "month": 10,
+   "aqua": 219.0,
+   "harmonized": 108.29,
+   "naive": 956.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2021,
+   "month": 10,
+   "aqua": 394.0,
+   "harmonized": 701.01,
+   "naive": 3025.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2021,
+   "month": 10,
+   "aqua": 899.0,
+   "harmonized": 728.56,
+   "naive": 3566.0
+  },
+  {
+   "prov": "90",
+   "name": "Tucum\u00e1n",
+   "year": 2021,
+   "month": 10,
+   "aqua": 158.0,
+   "harmonized": 127.04,
+   "naive": 733.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2021,
+   "month": 11,
+   "aqua": 45.0,
+   "harmonized": 59.41,
+   "naive": 386.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2021,
+   "month": 11,
+   "aqua": 54.0,
+   "harmonized": 77.61,
+   "naive": 456.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2021,
+   "month": 11,
+   "aqua": 34.0,
+   "harmonized": 59.0,
+   "naive": 271.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2021,
+   "month": 11,
+   "aqua": 67.0,
+   "harmonized": 99.68,
+   "naive": 624.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2021,
+   "month": 11,
+   "aqua": 70.0,
+   "harmonized": 81.18,
+   "naive": 407.0
+  },
+  {
+   "prov": "46",
+   "name": "La Rioja",
+   "year": 2021,
+   "month": 11,
+   "aqua": 48.0,
+   "harmonized": 41.31,
+   "naive": 301.0
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "year": 2021,
+   "month": 11,
+   "aqua": 22.0,
+   "harmonized": 18.94,
+   "naive": 101.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2021,
+   "month": 11,
+   "aqua": 23.0,
+   "harmonized": 42.13,
+   "naive": 211.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2021,
+   "month": 11,
+   "aqua": 76.0,
+   "harmonized": 104.36,
+   "naive": 683.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2021,
+   "month": 11,
+   "aqua": 107.0,
+   "harmonized": 216.67,
+   "naive": 856.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2021,
+   "month": 11,
+   "aqua": 78.0,
+   "harmonized": 87.95,
+   "naive": 399.0
+  },
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "year": 2021,
+   "month": 12,
+   "aqua": 94.0,
+   "harmonized": 117.53,
+   "naive": 861.0
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "year": 2021,
+   "month": 12,
+   "aqua": 277.0,
+   "harmonized": 272.62,
+   "naive": 1948.0
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "year": 2021,
+   "month": 12,
+   "aqua": 74.0,
+   "harmonized": 76.72,
+   "naive": 534.0
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "year": 2021,
+   "month": 12,
+   "aqua": 240.0,
+   "harmonized": 228.85,
+   "naive": 2055.0
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "year": 2021,
+   "month": 12,
+   "aqua": 1136.0,
+   "harmonized": 849.21,
+   "naive": 6048.0
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "year": 2021,
+   "month": 12,
+   "aqua": 52.0,
+   "harmonized": 80.02,
+   "naive": 592.0
+  },
+  {
+   "prov": "58",
+   "name": "Neuqu\u00e9n",
+   "year": 2021,
+   "month": 12,
+   "aqua": 89.0,
+   "harmonized": 124.19,
+   "naive": 957.0
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "year": 2021,
+   "month": 12,
+   "aqua": 99.0,
+   "harmonized": 114.16,
+   "naive": 846.0
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "year": 2021,
+   "month": 12,
+   "aqua": 50.0,
+   "harmonized": 60.07,
+   "naive": 377.0
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "year": 2021,
+   "month": 12,
+   "aqua": 350.0,
+   "harmonized": 570.11,
+   "naive": 2955.0
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "year": 2021,
+   "month": 12,
+   "aqua": 100.0,
+   "harmonized": 79.66,
+   "naive": 501.0
+  }
+ ],
+ "yearly_ratio": [
+  {
+   "year": 2012,
+   "ratio": 1.0135830939910955
+  },
+  {
+   "year": 2013,
+   "ratio": 0.9930160857986747
+  },
+  {
+   "year": 2014,
+   "ratio": 0.9759826999803711
+  },
+  {
+   "year": 2015,
+   "ratio": 0.9657762950725537
+  },
+  {
+   "year": 2016,
+   "ratio": 1.0367621102815703
+  },
+  {
+   "year": 2017,
+   "ratio": 1.0230944586964934
+  },
+  {
+   "year": 2018,
+   "ratio": 0.9698849145966655
+  },
+  {
+   "year": 2019,
+   "ratio": 1.004400833103983
+  },
+  {
+   "year": 2020,
+   "ratio": 1.0277930284303836
+  },
+  {
+   "year": 2021,
+   "ratio": 0.9527855048370825
+  },
+  {
+   "year": 2022,
+   "ratio": 1.0276277360898358
+  },
+  {
+   "year": 2023,
+   "ratio": 1.0617599876294082
+  },
+  {
+   "year": 2024,
+   "ratio": 1.1633463610696817
+  },
+  {
+   "year": 2025,
+   "ratio": 1.0913942857234884
+  },
+  {
+   "year": 2026,
+   "ratio": 0.9166134441561683
+  }
+ ],
+ "seam": {
+  "months": [
+   {
+    "month": "2012-02",
+    "aqua": 1407.0,
+    "harmonized": 1427.53
+   },
+   {
+    "month": "2012-03",
+    "aqua": 1890.0,
+    "harmonized": 1867.81
+   },
+   {
+    "month": "2012-04",
+    "aqua": 663.0,
+    "harmonized": 692.28
+   },
+   {
+    "month": "2012-05",
+    "aqua": 1147.0,
+    "harmonized": 1115.44
+   },
+   {
+    "month": "2012-06",
+    "aqua": 2386.0,
+    "harmonized": 2416.28
+   },
+   {
+    "month": "2012-07",
+    "aqua": 6376.0,
+    "harmonized": 5994.33
+   },
+   {
+    "month": "2012-08",
+    "aqua": 7189.0,
+    "harmonized": 6911.82
+   },
+   {
+    "month": "2012-09",
+    "aqua": 6305.0,
+    "harmonized": 6318.11
+   },
+   {
+    "month": "2012-10",
+    "aqua": 3356.0,
+    "harmonized": 3412.17
+   },
+   {
+    "month": "2012-11",
+    "aqua": 1081.0,
+    "harmonized": 1381.72
+   },
+   {
+    "month": "2012-12",
+    "aqua": 1115.0,
+    "harmonized": 936.42
+   },
+   {
+    "month": "2013-01",
+    "aqua": 1283.0,
+    "harmonized": 1320.37
+   },
+   {
+    "month": "2013-02",
+    "aqua": 1352.0,
+    "harmonized": 1472.15
+   },
+   {
+    "month": "2013-03",
+    "aqua": 936.0,
+    "harmonized": 857.41
+   },
+   {
+    "month": "2013-04",
+    "aqua": 1133.0,
+    "harmonized": 1134.39
+   },
+   {
+    "month": "2013-05",
+    "aqua": 916.0,
+    "harmonized": 878.13
+   },
+   {
+    "month": "2013-06",
+    "aqua": 1332.0,
+    "harmonized": 1506.77
+   },
+   {
+    "month": "2013-07",
+    "aqua": 3733.0,
+    "harmonized": 4056.67
+   },
+   {
+    "month": "2013-08",
+    "aqua": 10399.0,
+    "harmonized": 9946.12
+   },
+   {
+    "month": "2013-09",
+    "aqua": 10261.0,
+    "harmonized": 9626.11
+   },
+   {
+    "month": "2013-10",
+    "aqua": 4504.0,
+    "harmonized": 5187.06
+   },
+   {
+    "month": "2013-11",
+    "aqua": 1656.0,
+    "harmonized": 1724.56
+   },
+   {
+    "month": "2013-12",
+    "aqua": 868.0,
+    "harmonized": 933.14
+   }
+  ],
+  "metrics": {
+   "n": 23,
+   "bias": -0.0024017722591239687,
+   "mape": 4.35505787357301,
+   "logcorr": 0.9948466903577338
+  }
+ },
+ "typical_error_pct": 16.97853969104378,
+ "naive_error_pct": 432.1428571428571,
+ "excluded_days": 191,
+ "partner_check": null,
+ "noaa20": {
+  "train_years": [
+   2018,
+   2019
+  ],
+  "test": {
+   "national_month": {
+    "n": 24,
+    "bias": -0.01873828031131497,
+    "mape": 7.08242185160093,
+    "logcorr": 0.9945210377001186
+   },
+   "province_month": {
+    "n": 331,
+    "bias": -0.025953555687715624,
+    "mape": 17.45493920202735,
+    "logcorr": 0.9722571415128449
+   },
+   "tile_month": {
+    "n": 924,
+    "bias": -0.05446853752339087,
+    "mape": 23.84974841216026,
+    "logcorr": 0.9038421163145575
+   }
+  },
+  "handover": {
+   "years": [
+    2022,
+    2025
+   ],
+   "national_month": {
+    "n": 48,
+    "bias": -0.02197341187571289,
+    "mape": 3.9440429548586735,
+    "logcorr": 0.9973313500089351
+   },
+   "province_month": {
+    "n": 667,
+    "bias": -0.022740211456434456,
+    "mape": 10.275783322456629,
+    "logcorr": 0.9868462319080037
+   }
+  },
+  "typical_error_pct": 17.45493920202735,
+  "province_bias": [
+   {
+    "prov": "06",
+    "name": "Buenos Aires",
+    "aqua": 2558.5,
+    "harmonized": 2640.44,
+    "bias": 0.032026917491353
+   },
+   {
+    "prov": "10",
+    "name": "Catamarca",
+    "aqua": 534.0,
+    "harmonized": 444.0,
+    "bias": -0.16854019649552743
+   },
+   {
+    "prov": "14",
+    "name": "C\u00f3rdoba",
+    "aqua": 2739.5,
+    "harmonized": 1868.36,
+    "bias": -0.3179911626525356
+   },
+   {
+    "prov": "18",
+    "name": "Corrientes",
+    "aqua": 9817.5,
+    "harmonized": 10028.01,
+    "bias": 0.021442386126797386
+   },
+   {
+    "prov": "22",
+    "name": "Chaco",
+    "aqua": 11189.5,
+    "harmonized": 10516.18,
+    "bias": -0.06017418265787755
+   },
+   {
+    "prov": "26",
+    "name": "Chubut",
+    "aqua": 207.0,
+    "harmonized": 156.7,
+    "bias": -0.2429886961146086
+   },
+   {
+    "prov": "30",
+    "name": "Entre R\u00edos",
+    "aqua": 6199.5,
+    "harmonized": 5400.36,
+    "bias": -0.12890404949207723
+   },
+   {
+    "prov": "34",
+    "name": "Formosa",
+    "aqua": 18495.0,
+    "harmonized": 15536.81,
+    "bias": -0.15994565432932029
+   },
+   {
+    "prov": "38",
+    "name": "Jujuy",
+    "aqua": 785.0,
+    "harmonized": 1000.02,
+    "bias": 0.27391541051088364
+   },
+   {
+    "prov": "42",
+    "name": "La Pampa",
+    "aqua": 750.5,
+    "harmonized": 709.32,
+    "bias": -0.054875708343286034
+   },
+   {
+    "prov": "46",
+    "name": "La Rioja",
+    "aqua": 491.0,
+    "harmonized": 514.23,
+    "bias": 0.04731576659696879
+   },
+   {
+    "prov": "50",
+    "name": "Mendoza",
+    "aqua": 750.5,
+    "harmonized": 944.17,
+    "bias": 0.2580580279341915
+   },
+   {
+    "prov": "54",
+    "name": "Misiones",
+    "aqua": 2827.0,
+    "harmonized": 2787.5,
+    "bias": -0.013973321393346172
+   },
+   {
+    "prov": "58",
+    "name": "Neuqu\u00e9n",
+    "aqua": 541.0,
+    "harmonized": 878.24,
+    "bias": 0.6233561498843487
+   },
+   {
+    "prov": "62",
+    "name": "R\u00edo Negro",
+    "aqua": 1130.5,
+    "harmonized": 1155.75,
+    "bias": 0.022333674525171654
+   },
+   {
+    "prov": "66",
+    "name": "Salta",
+    "aqua": 4333.0,
+    "harmonized": 4935.03,
+    "bias": 0.13893993063322352
+   },
+   {
+    "prov": "70",
+    "name": "San Juan",
+    "aqua": 486.5,
+    "harmonized": 563.31,
+    "bias": 0.1578747419580937
+   },
+   {
+    "prov": "74",
+    "name": "San Luis",
+    "aqua": 1594.5,
+    "harmonized": 1136.58,
+    "bias": -0.2871848224491227
+   },
+   {
+    "prov": "82",
+    "name": "Santa Fe",
+    "aqua": 15937.0,
+    "harmonized": 19659.1,
+    "bias": 0.23355110801511803
+   },
+   {
+    "prov": "86",
+    "name": "Santiago del Estero",
+    "aqua": 10146.0,
+    "harmonized": 9146.55,
+    "bias": -0.09850666121260288
+   },
+   {
+    "prov": "90",
+    "name": "Tucum\u00e1n",
+    "aqua": 2656.0,
+    "harmonized": 2382.79,
+    "bias": -0.10286679537198096
+   }
+  ]
+ },
+ "province_bias": [
+  {
+   "prov": "06",
+   "name": "Buenos Aires",
+   "aqua": 2518.5,
+   "harmonized": 2939.91,
+   "bias": 0.16732508480803365
+  },
+  {
+   "prov": "10",
+   "name": "Catamarca",
+   "aqua": 533.0,
+   "harmonized": 443.14,
+   "bias": -0.16858593856421467
+  },
+  {
+   "prov": "14",
+   "name": "C\u00f3rdoba",
+   "aqua": 2730.5,
+   "harmonized": 2144.51,
+   "bias": -0.2146079488090774
+  },
+  {
+   "prov": "18",
+   "name": "Corrientes",
+   "aqua": 9698.5,
+   "harmonized": 9815.2,
+   "bias": 0.01203253910805846
+  },
+  {
+   "prov": "22",
+   "name": "Chaco",
+   "aqua": 11146.5,
+   "harmonized": 10432.86,
+   "bias": -0.0640235237833523
+  },
+  {
+   "prov": "26",
+   "name": "Chubut",
+   "aqua": 207.0,
+   "harmonized": 180.99,
+   "bias": -0.12566881199601687
+  },
+  {
+   "prov": "30",
+   "name": "Entre R\u00edos",
+   "aqua": 6183.5,
+   "harmonized": 6366.23,
+   "bias": 0.029550497188834512
+  },
+  {
+   "prov": "34",
+   "name": "Formosa",
+   "aqua": 18459.0,
+   "harmonized": 15827.13,
+   "bias": -0.14257932738830603
+  },
+  {
+   "prov": "38",
+   "name": "Jujuy",
+   "aqua": 785.0,
+   "harmonized": 922.89,
+   "bias": 0.1756594950701782
+  },
+  {
+   "prov": "42",
+   "name": "La Pampa",
+   "aqua": 747.5,
+   "harmonized": 729.26,
+   "bias": -0.02440246548903391
+  },
+  {
+   "prov": "46",
+   "name": "La Rioja",
+   "aqua": 491.0,
+   "harmonized": 498.22,
+   "bias": 0.01470932445488815
+  },
+  {
+   "prov": "50",
+   "name": "Mendoza",
+   "aqua": 740.5,
+   "harmonized": 1016.74,
+   "bias": 0.3730390200542453
+  },
+  {
+   "prov": "54",
+   "name": "Misiones",
+   "aqua": 2819.0,
+   "harmonized": 2998.46,
+   "bias": 0.0636617202519465
+  },
+  {
+   "prov": "58",
+   "name": "Neuqu\u00e9n",
+   "aqua": 541.0,
+   "harmonized": 906.45,
+   "bias": 0.6755022580589265
+  },
+  {
+   "prov": "62",
+   "name": "R\u00edo Negro",
+   "aqua": 1125.5,
+   "harmonized": 1164.72,
+   "bias": 0.034842509228898644
+  },
+  {
+   "prov": "66",
+   "name": "Salta",
+   "aqua": 4322.0,
+   "harmonized": 4515.82,
+   "bias": 0.044844905009870706
+  },
+  {
+   "prov": "70",
+   "name": "San Juan",
+   "aqua": 485.5,
+   "harmonized": 610.82,
+   "bias": 0.2581208665530872
+  },
+  {
+   "prov": "74",
+   "name": "San Luis",
+   "aqua": 1594.5,
+   "harmonized": 1157.33,
+   "bias": -0.2741756441632818
+  },
+  {
+   "prov": "82",
+   "name": "Santa Fe",
+   "aqua": 15860.0,
+   "harmonized": 19809.8,
+   "bias": 0.24904188390852444
+  },
+  {
+   "prov": "86",
+   "name": "Santiago del Estero",
+   "aqua": 10099.0,
+   "harmonized": 8733.35,
+   "bias": -0.13522667321369786
+  },
+  {
+   "prov": "90",
+   "name": "Tucum\u00e1n",
+   "aqua": 2632.0,
+   "harmonized": 2388.43,
+   "bias": -0.09254228311493362
+  }
+ ],
+ "error_by_count": [
+  {
+   "band": "1-4",
+   "n": 63,
+   "mape": 124.03932216755447
+  },
+  {
+   "band": "5-19",
+   "n": 107,
+   "mape": 43.27243019140154
+  },
+  {
+   "band": "20+",
+   "n": 331,
+   "mape": 16.97853969104378
+  }
+ ],
+ "bias_by_level": [
+  {
+   "band": "<0.5x",
+   "n": 18,
+   "bias": 0.24566448050219258,
+   "mape": 26.054761077878638
+  },
+  {
+   "band": "0.5-2x",
+   "n": 199,
+   "bias": 0.02521912173655938,
+   "mape": 17.19360699874294
+  },
+  {
+   "band": "2-5x",
+   "n": 71,
+   "bias": -0.005758538191328655,
+   "mape": 18.552343126039982
+  },
+  {
+   "band": "5-10x",
+   "n": 30,
+   "bias": -0.08727263075994163,
+   "mape": 12.004950087675226
+  },
+  {
+   "band": "10x+",
+   "n": 13,
+   "bias": -0.1066877023352486,
+   "mape": 14.12171628166572
+  }
+ ],
+ "excluded_dates": [
+  "2002-07-30",
+  "2002-07-31",
+  "2002-08-01",
+  "2002-08-02",
+  "2002-08-03",
+  "2002-08-04",
+  "2002-08-05",
+  "2002-08-06",
+  "2002-08-07",
+  "2002-09-12",
+  "2002-09-13",
+  "2002-10-16",
+  "2002-11-15",
+  "2002-12-20",
+  "2002-12-22",
+  "2003-02-12",
+  "2003-03-14",
+  "2003-05-12",
+  "2003-06-10",
+  "2004-04-10",
+  "2004-05-03",
+  "2004-11-11",
+  "2004-11-16",
+  "2005-04-01",
+  "2005-06-26",
+  "2007-01-24",
+  "2007-02-17",
+  "2007-04-04",
+  "2008-04-12",
+  "2008-06-04",
+  "2009-07-20",
+  "2009-12-09",
+  "2009-12-27",
+  "2010-01-08",
+  "2010-11-28",
+  "2011-11-13",
+  "2011-11-20",
+  "2012-03-24",
+  "2012-03-25",
+  "2013-01-20",
+  "2013-03-12",
+  "2013-12-11",
+  "2014-02-20",
+  "2014-06-12",
+  "2014-08-08",
+  "2014-12-21",
+  "2015-09-13",
+  "2015-09-23",
+  "2015-12-03",
+  "2016-01-31",
+  "2016-02-16",
+  "2016-03-01",
+  "2016-03-19",
+  "2016-05-25",
+  "2016-06-01",
+  "2017-09-29",
+  "2018-05-15",
+  "2018-10-31",
+  "2018-12-02",
+  "2019-01-21",
+  "2019-05-02",
+  "2020-08-16",
+  "2020-08-17",
+  "2020-08-18",
+  "2020-08-19",
+  "2020-08-20",
+  "2020-08-21",
+  "2020-08-22",
+  "2020-08-23",
+  "2020-08-24",
+  "2020-08-25",
+  "2020-08-26",
+  "2020-08-27",
+  "2020-08-28",
+  "2020-08-29",
+  "2020-08-30",
+  "2020-08-31",
+  "2020-09-01",
+  "2020-09-02",
+  "2021-01-26",
+  "2021-04-05",
+  "2021-08-03",
+  "2021-09-23",
+  "2021-10-10",
+  "2021-11-01",
+  "2021-11-05",
+  "2022-02-21",
+  "2022-03-23",
+  "2022-03-31",
+  "2022-04-01",
+  "2022-04-02",
+  "2022-04-03",
+  "2022-04-04",
+  "2022-04-05",
+  "2022-04-06",
+  "2022-04-07",
+  "2022-04-08",
+  "2022-04-09",
+  "2022-04-13",
+  "2022-04-14",
+  "2022-04-15",
+  "2022-04-16",
+  "2022-05-10",
+  "2022-05-16",
+  "2022-07-26",
+  "2022-07-27",
+  "2022-07-28",
+  "2022-07-29",
+  "2022-07-30",
+  "2022-07-31",
+  "2022-08-01",
+  "2022-08-02",
+  "2022-08-03",
+  "2022-08-04",
+  "2022-08-05",
+  "2022-08-06",
+  "2022-08-07",
+  "2022-08-08",
+  "2022-08-09",
+  "2022-08-10",
+  "2023-07-26",
+  "2023-07-27",
+  "2023-11-01",
+  "2023-12-06",
+  "2024-01-12",
+  "2024-01-14",
+  "2024-02-02",
+  "2024-03-02",
+  "2024-04-09",
+  "2024-04-21",
+  "2024-05-30",
+  "2024-05-31",
+  "2024-06-01",
+  "2024-06-02",
+  "2024-06-03",
+  "2024-06-08",
+  "2024-06-23",
+  "2024-07-10",
+  "2024-07-11",
+  "2024-07-12",
+  "2024-07-13",
+  "2024-07-14",
+  "2024-07-15",
+  "2024-07-24",
+  "2024-07-25",
+  "2024-07-26",
+  "2024-07-27",
+  "2024-07-28",
+  "2024-07-31",
+  "2024-08-01",
+  "2024-08-07",
+  "2024-08-08",
+  "2024-09-26",
+  "2024-10-11",
+  "2024-11-03",
+  "2024-11-04",
+  "2024-11-05",
+  "2024-11-26",
+  "2024-12-08",
+  "2025-03-01",
+  "2025-03-28",
+  "2025-07-04",
+  "2025-07-05",
+  "2025-07-06",
+  "2025-07-07",
+  "2025-11-11",
+  "2025-12-08",
+  "2026-03-08",
+  "2026-03-10",
+  "2026-03-11",
+  "2026-03-12",
+  "2026-04-28",
+  "2026-04-29",
+  "2026-04-30",
+  "2026-05-03",
+  "2026-05-30",
+  "2026-06-01",
+  "2026-06-02",
+  "2026-06-26",
+  "2026-07-10",
+  "2026-07-11",
+  "2026-07-12",
+  "2026-07-13",
+  "2026-07-14",
+  "2026-07-15",
+  "2026-07-16",
+  "2026-08-03",
+  "2026-08-11",
+  "2026-09-29",
+  "2026-10-04",
+  "2026-10-23"
+ ],
+ "yearly_test": [
+  {
+   "year": 2020,
+   "aqua": 62217.0,
+   "harmonized": 60534.56,
+   "bias": -0.027041464245800895
+  },
+  {
+   "year": 2021,
+   "aqua": 31597.0,
+   "harmonized": 33162.76,
+   "bias": 0.04955417029669307
+  }
+ ]
+}

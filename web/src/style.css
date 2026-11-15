@@ -1,0 +1,1158 @@
+/* Focos. Calm and data-first: colour is kept for the data, everything else is
+   ink on paper. All sizes are relative, so the page follows the reader's text size. */
+
+:root {
+  --paper: #f6f5f1;
+  --surface: #ffffff;
+  --ink: #1c1b19;
+  --muted: #5d5a53;
+  --line: #d9d6cd;
+  --accent: #1f4e79;
+  --notice-bg: #fff6dc;
+  --notice-line: #d9b441;
+  --radius: 6px;
+  --focus: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent);
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.45;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  z-index: 2000;
+  padding: 0.5rem 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* ---- Header and footer ---------------------------------------------------- */
+
+.site-header,
+.site-footer,
+.layout {
+  width: 100%;
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 0.75rem;
+}
+
+.brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.15rem 0.9rem;
+}
+
+.brand h1 {
+  font-size: 1.6rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  color: var(--muted);
+}
+
+/* One plain line under the name: why the two sensors cannot simply be joined. A full row of its own. */
+.lede {
+  flex-basis: 100%;
+  max-width: 52rem;
+  color: var(--ink);
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 40rem) {
+  .lede {
+    font-size: 0.875rem;
+  }
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.site-footer p + p {
+  margin-top: 0.25rem;
+}
+
+/* ---- Layout: area on the left, results on the right; stacked on a phone ----- */
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+@media (min-width: 60rem) {
+  .layout {
+    grid-template-columns: minmax(20rem, 45fr) minmax(0, 55fr);
+    align-items: start;
+  }
+
+  .area-panel {
+    position: sticky;
+    top: 0.75rem;
+    max-height: calc(100vh - 1.5rem);
+    overflow: auto;
+  }
+
+}
+
+.area-panel,
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.area-panel > * + * {
+  margin-top: 0.75rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* ---- Form controls -------------------------------------------------------- */
+
+label,
+legend {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  padding: 0;
+  margin-bottom: 0.4rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+select,
+input[type='number'],
+input[type='date'] {
+  width: 100%;
+  min-height: 2.5rem;
+  padding: 0.35rem 0.5rem;
+  background: var(--surface);
+  border: 1px solid #8f8b82;
+  border-radius: var(--radius);
+}
+
+.field {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.button {
+  min-height: 2.5rem;
+  padding: 0.4rem 0.9rem;
+  background: var(--surface);
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--paper);
+}
+
+.button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+.button:disabled {
+  border-color: var(--line);
+  color: var(--muted);
+  cursor: default;
+}
+
+/* ---- Map ------------------------------------------------------------------ */
+
+.map {
+  height: 15rem;
+  background: #e9eef0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  /* Leaflet's own stacking stays below the page's skip link. */
+  position: relative;
+  z-index: 0;
+}
+
+@media (min-width: 60rem) {
+  .map {
+    height: clamp(16rem, 48vh, 34rem);
+  }
+}
+
+.circle-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  align-items: end;
+}
+
+.circle-fields label {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.circle-fields .button {
+  grid-column: 1 / -1;
+}
+
+.circle-form .hint {
+  margin-top: 0.5rem;
+}
+
+
+
+/* ---- Results -------------------------------------------------------------- */
+
+.results {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.results:focus {
+  outline: none;
+}
+
+.results-head h2 {
+  font-size: 2rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 40rem) {
+  .results-head h2 {
+    font-size: 1.75rem;
+  }
+}
+
+#results-body {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.notice,
+.load-status {
+  padding: 0.6rem 0.75rem;
+  background: var(--notice-bg);
+  border: 1px solid var(--notice-line);
+  border-radius: var(--radius);
+}
+
+.results-head .notice {
+  margin-top: 0.5rem;
+}
+
+.load-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+/* ---- Year range: two sliders on one track ----------------------------------- */
+
+.year-range {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0 1rem;
+}
+
+.year-range legend {
+  grid-column: 1 / -1;
+}
+
+.year-range output {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.dual-range {
+  position: relative;
+  height: 2rem;
+}
+
+.dual-range-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 4px;
+  margin-top: -2px;
+  background: var(--line);
+  border-radius: 2px;
+}
+
+.dual-range-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--ink);
+  border-radius: 2px;
+}
+
+.dual-range input[type='range'] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: transparent;
+  pointer-events: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.dual-range input[type='range']::-webkit-slider-runnable-track {
+  background: transparent;
+  height: 100%;
+}
+
+.dual-range input[type='range']::-moz-range-track {
+  background: transparent;
+}
+
+.dual-range input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.375rem;
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.dual-range input[type='range']::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  background: var(--surface);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.dual-range input[type='range']:focus-visible {
+  outline: none;
+}
+
+.dual-range input[type='range']:focus-visible::-webkit-slider-thumb {
+  box-shadow: var(--focus);
+}
+
+.dual-range input[type='range']:focus-visible::-moz-range-thumb {
+  box-shadow: var(--focus);
+}
+
+/* ---- Downloads ------------------------------------------------------------ */
+
+.download-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.csv-dates {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+  align-items: end;
+}
+
+.csv-dates legend {
+  grid-column: 1 / -1;
+}
+
+.csv-dates label {
+  display: grid;
+  gap: 0.25rem;
+  font-weight: 400;
+}
+
+.csv-dates .button {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+@media (min-width: 40rem) {
+  .csv-dates {
+    grid-template-columns: repeat(2, minmax(0, 11rem)) auto;
+  }
+
+  .csv-dates .button {
+    grid-column: auto;
+  }
+}
+
+.download-status,
+.dots-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+}
+
+.download-status {
+  padding: 0.5rem 0.75rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 0.9375rem;
+}
+
+.button-small {
+  min-height: 2rem;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.875rem;
+}
+
+/* ---- Cards ---------------------------------------------------------------- */
+
+.card > * + * {
+  margin-top: 0.75rem;
+}
+
+/* Two notes on a chart read as one block. */
+.card > .hint + .hint {
+  margin-top: 0.2rem;
+}
+
+.card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toolbar .button {
+  min-height: 2.25rem;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.875rem;
+}
+
+/* ---- Segmented choice: radio buttons drawn as one control ------------------- */
+
+.segmented {
+  display: inline-flex;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.segmented label {
+  display: inline-flex;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.segmented label + label {
+  border-left: 1px solid var(--ink);
+}
+
+.segmented input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.segmented span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.25rem 0.7rem;
+  background: var(--surface);
+}
+
+.segmented input:checked + span {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+.segmented input:focus-visible + span {
+  outline: 2px solid var(--accent);
+  outline-offset: -4px;
+}
+
+.segmented input:checked:focus-visible + span {
+  outline-color: var(--surface);
+}
+
+.segmented input:disabled + span {
+  color: #8f8b82;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* ---- Calendar ------------------------------------------------------------- */
+
+.calendar {
+  position: relative;
+  min-width: 0;
+}
+
+.calendar-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.calendar-svg g.cal-cell[role='button'] {
+  cursor: pointer;
+}
+
+.calendar-svg g.cal-cell:focus {
+  outline: none;
+}
+
+/* The focus ring is drawn on the cell itself, where every browser shows it. */
+.calendar-svg g.cal-cell:focus-visible > rect:first-child {
+  stroke: var(--accent);
+  stroke-width: 3;
+  paint-order: stroke;
+}
+
+.calendar-svg g.cal-cell[role='button']:hover > rect:first-child {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+.calendar-empty {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+}
+
+.cal-tooltip {
+  position: absolute;
+  z-index: 5;
+  display: grid;
+  gap: 0.1rem;
+  width: max-content;
+  max-width: min(20rem, 92vw);
+  padding: 0.5rem 0.65rem;
+  background: var(--ink);
+  color: #ffffff;
+  border-radius: var(--radius);
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.cell-detail {
+  color: var(--muted);
+  font-size: 0.875rem;
+  min-height: 1.3rem;
+}
+
+/* ---- Table view ----------------------------------------------------------- */
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.cal-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.cal-table caption {
+  padding-bottom: 0.4rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.cal-table th,
+.cal-table td {
+  padding: 0.25rem 0.45rem;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.cal-table thead th {
+  border-bottom-color: var(--ink);
+}
+
+.cal-table tbody th {
+  text-align: left;
+}
+
+.cal-table td[data-status='nodata'] {
+  color: var(--muted);
+}
+
+.table-notes {
+  margin-top: 0.5rem;
+}
+
+/* ---- Verdict, caution and test line ----------------------------------------- */
+
+.verdict-block {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.overline {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.verdict-card > * + * {
+  margin-top: 0.35rem;
+}
+
+.verdict-text {
+  font-size: 1.3rem;
+  line-height: 1.35;
+  font-weight: 600;
+  text-wrap: pretty;
+}
+
+/* The second thing the headline says, under the first. */
+.verdict-more {
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+/* The Harmonized / Raw switch, above everything it applies to, with one line on what Raw is. */
+.series-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.9rem;
+}
+
+.series-bar .hint {
+  flex: 1 1 14rem;
+}
+
+/* What the raw counts would have said, under the headline: a quieter line. */
+.raw-trend {
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* The re-test of the trend belongs to the caution above it. */
+.caution-check {
+  margin-top: -0.25rem;
+  padding: 0 0.75rem;
+  border-left: 3px solid var(--notice-line);
+  font-size: 0.9375rem;
+}
+
+.caution {
+  padding: 0.45rem 0.75rem;
+  border-left: 3px solid var(--notice-line);
+  background: var(--notice-bg);
+  font-size: 0.9375rem;
+}
+
+.test-line {
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* ---- Charts --------------------------------------------------------------- */
+
+.chart {
+  min-width: 0;
+}
+
+.chart-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.chart-empty {
+  color: var(--muted);
+}
+
+.trend-text {
+  font-weight: 600;
+}
+
+/* ---- Header controls and stories ---------------------------------------------- */
+
+.site-nav {
+  flex-wrap: wrap;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.lang-button {
+  min-width: 2.5rem;
+  min-height: 2rem;
+  padding: 0.15rem 0.5rem;
+  background: var(--surface);
+  border: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lang-button + .lang-button {
+  border-left: 1px solid var(--ink);
+}
+
+.lang-button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+.lang-button:focus-visible {
+  outline-offset: -4px;
+}
+
+.lang-button[aria-pressed='true']:focus-visible {
+  outline-color: var(--surface);
+}
+
+.link-status {
+  flex-basis: 100%;
+  color: var(--muted);
+  font-size: 0.875rem;
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.stories {
+  width: 100%;
+  max-width: 90rem;
+  margin: 0 auto 1rem;
+  padding: 0 1rem;
+}
+
+.story-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(15rem, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.4rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  scroll-snap-type: x proximity;
+}
+
+.story {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.6rem 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  text-decoration: none;
+  scroll-snap-align: start;
+}
+
+.story:hover {
+  border-color: var(--ink);
+}
+
+.story-title {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.15em;
+}
+
+.story-caption {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* ---- The "How it works" page ------------------------------------------------- */
+
+.method {
+  width: 100%;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.method:focus {
+  outline: none;
+}
+
+.method-title {
+  font-size: 1.6rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.method section {
+  margin-top: 2rem;
+}
+
+.method h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.method p,
+.method ul,
+.method ol {
+  max-width: 44rem;
+}
+
+.method p + p,
+.method p + figure,
+.method figure + p,
+.method ol + p,
+.method .table-scroll + p,
+.method p + .table-scroll,
+.method figure + .table-scroll,
+.method div + div {
+  margin-top: 0.75rem;
+}
+
+.method ul,
+.method ol {
+  margin: 0;
+  padding-left: 1.3rem;
+}
+
+.method li + li {
+  margin-top: 0.4rem;
+}
+
+.method figure {
+  margin: 0;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.method figcaption {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.method-table {
+  border-collapse: collapse;
+  width: 100%;
+  background: var(--surface);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.method-table caption {
+  padding-bottom: 0.4rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.method-table th,
+.method-table td {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--line);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.method-table thead th {
+  background: var(--paper);
+  text-align: center;
+}
+
+.method-table tbody th {
+  text-align: left;
+  font-weight: 400;
+  white-space: normal;
+}
+
+/* ---- The folded map panel ----------------------------------------------------- */
+
+.map-details > summary {
+  padding: 0.35rem 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.map-details[open] > summary {
+  margin-bottom: 0.25rem;
+}
+
+.map-details > * + * {
+  margin-top: 0.6rem;
+}
+
+/* Shown on touch screens while a swipe over the map still scrolls the page. */
+.map-hint {
+  /* In the middle of the map: the corners hold the controls, the trend legend and the attribution. */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1000;
+  transform: translate(-50%, -50%);
+  padding: 0.25rem 0.6rem;
+  background: var(--ink);
+  color: #ffffff;
+  border-radius: var(--radius);
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* The legend of the provinces' trend colours, in the map's corner. */
+.trend-legend {
+  padding: 0.4rem 0.55rem;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  max-width: 11.5rem;
+}
+
+.trend-legend-title {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.trend-legend:not([open]) .trend-legend-title {
+  /* Folded: the title alone, with the browser's own marker that says it opens. */
+  white-space: nowrap;
+}
+
+.trend-legend .swatch {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.35rem;
+  border: 1px solid var(--ink);
+  vertical-align: -1px;
+}
+
+/* A mouse press on a province gives it the focus (its tooltip listens for focus), and the browser
+   then boxes the whole province in a ring until the click lands. The keyboard cannot reach these
+   outlines, so the ring tells nobody anything. */
+.map path.leaflet-interactive:focus {
+  outline: none;
+}
+
+/* While the rectangle tool is on, a press and a drag on the map draw: the pointer is a cross
+   everywhere on it, and on a touch screen the finger does not scroll the page. */
+.map.drawing-rectangle,
+.map.drawing-rectangle .leaflet-interactive {
+  cursor: crosshair;
+}
+
+.map.drawing-rectangle {
+  touch-action: none;
+}
+
+/* On a phone a wide table scrolls inside its box; keep its caption within the screen. */
+@media (max-width: 40rem) {
+  .method-table caption,
+  .cal-table caption {
+    max-width: calc(100vw - 2rem - 2px);
+  }
+}
+
+/* ---- The optional CONAE layer's toggle, in the map's corner --------------------- */
+
+.overlay-control {
+  max-width: 13.5rem;
+  padding: 0.3rem 0.5rem;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+}
+
+.overlay-toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.overlay-toggle input {
+  margin: 0.15rem 0 0;
+}
+
+.overlay-status {
+  margin-top: 0.25rem;
+  color: var(--muted);
+}
+
+/* Shown only where JavaScript is off: one plain line under the header. */
+.noscript {
+  max-width: 72rem;
+  margin: 1rem auto;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+/* The street map under the provinces, greyed and lightened so that the provinces, their trend
+   colours and the detections read first. The same OpenStreetMap tiles, only filtered. */
+.base-tiles {
+  filter: grayscale(1) brightness(1.06) contrast(0.82);
+}
+
+/* The yearly totals and the calendar point at each other: the year under the pointer (or the
+   keyboard focus) is marked in both, its bar in the highlight colour and its row framed. */
+.cal-row-mark {
+  visibility: hidden;
+}
+
+.cal-row.linked .cal-row-mark {
+  visibility: visible;
+}
+
+.cal-row.linked > text:first-child {
+  fill: var(--ink);
+  font-weight: 700;
+}
+
+#yearly g.year-bar.linked > rect:not(.year-bar-hatch) {
+  fill: #b2182b;
+}
+
+/* Figures of one width wherever numbers sit in rows or columns: axes, calendar cells, year totals. */
+.chart-svg,
+.calendar-svg,
+.cal-tooltip,
+.cell-detail {
+  font-variant-numeric: tabular-nums;
+}

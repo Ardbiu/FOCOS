@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Focos</title>
+    <meta name="description" content="%i18n:app.description%" />
+    <meta property="og:title" content="%i18n:app.title%" />
+    <meta property="og:description" content="%i18n:app.description%" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ardbiu.github.io/FOCOS/" />
+    <meta property="og:image" content="https://ardbiu.github.io/FOCOS/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="%i18n:app.shareAlt%" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <!-- The product name is the only text kept in the HTML. Every other string
+         comes from src/i18n and is filled in by the script (data-i18n). -->
+    <a class="skip-link" href="#results" data-i18n="nav.skip"></a>
+
+    <header class="site-header">
+      <div class="brand">
+        <h1>Focos</h1>
+        <p id="tagline" class="tagline" data-i18n="app.tagline"></p>
+      </div>
+      <nav class="site-nav">
+        <div class="lang-toggle" role="group" data-i18n-attr="aria-label:lang.label">
+          <button type="button" id="lang-en" class="lang-button" lang="en" aria-pressed="true" data-i18n="lang.en" data-i18n-attr="aria-label:lang.enName"></button>
+          <button type="button" id="lang-es" class="lang-button" lang="es" aria-pressed="false" data-i18n="lang.es" data-i18n-attr="aria-label:lang.esName"></button>
+        </div>
+        <button type="button" id="copy-link" class="button button-small" data-i18n="link.copy"></button>
+        <a id="method-link" href="method.html" data-method-link data-i18n="nav.method"></a>
+      </nav>
+      <p id="link-status" class="link-status" role="status" hidden></p>
+      <p id="lede" class="lede" data-i18n="app.lede"></p>
+    </header>
+
+    <noscript><p class="noscript">%i18n:app.noscript% <a href="https://github.com/Ardbiu/FOCOS">github.com/Ardbiu/FOCOS</a></p></noscript>
+
+    <section id="stories" class="stories" aria-labelledby="stories-heading" hidden>
+      <h2 id="stories-heading" class="overline" data-i18n="stories.heading"></h2>
+      <div id="story-list" class="story-list"></div>
+    </section>
+
+    <main class="layout">
+      <section id="area-panel" class="area-panel" aria-labelledby="area-heading">
+        <h2 id="area-heading" data-i18n="area.heading"></h2>
+
+        <div class="field">
+          <label for="province" data-i18n="area.province"></label>
+          <select id="province"></select>
+        </div>
+
+        <!-- The map and the point form: open on a wide screen, folded on a phone
+             so the verdict and the calendar come first. -->
+        <details id="map-details" class="map-details">
+          <summary id="map-summary" data-i18n="area.mapSummary"></summary>
+          <p class="hint" data-i18n="area.drawHint"></p>
+          <div id="map" class="map" data-i18n-attr="aria-label:area.mapLabel" role="region"></div>
+          <p id="map-status" class="hint" role="status" hidden></p>
+          <div id="dots-status" class="hint dots-status" role="status" hidden></div>
+
+          <form id="circle-form" class="circle-form" novalidate>
+            <fieldset>
+              <legend data-i18n="area.circle.legend"></legend>
+              <div class="circle-fields">
+                <label>
+                  <span data-i18n="area.circle.lat"></span>
+                  <input id="circle-lat" type="number" step="any" min="-90" max="90" inputmode="decimal" />
+                </label>
+                <label>
+                  <span data-i18n="area.circle.lon"></span>
+                  <input id="circle-lon" type="number" step="any" min="-180" max="180" inputmode="decimal" />
+                </label>
+                <label>
+                  <span data-i18n="area.circle.km"></span>
+                  <input id="circle-km" type="number" step="1" min="5" max="300" value="25" inputmode="numeric" />
+                </label>
+                <button type="submit" class="button" data-i18n="area.circle.apply"></button>
+              </div>
+              <p id="circle-message" class="hint" role="status" hidden></p>
+            </fieldset>
+          </form>
+        </details>
+      </section>
+
+      <section id="results" class="results" tabindex="-1">
+        <header class="results-head">
+          <h2 id="area-title"></h2>
+          <p id="area-notice" class="notice" role="status" hidden></p>
+        </header>
+
+        <div id="load-status" class="load-status" role="status" hidden></div>
+
+        <div id="results-body" hidden>
+          <div class="verdict-block">
+            <article id="verdict-card" class="card verdict-card" aria-labelledby="verdict-label">
+              <h3 id="verdict-label" class="overline"></h3>
+              <p id="verdict-text" class="verdict-text"></p>
+              <p id="verdict-more" class="verdict-more"></p>
+              <p id="raw-trend" class="raw-trend" hidden></p>
+            </article>
+            <p id="caution" class="caution" hidden></p>
+            <p id="caution-check" class="caution-check" hidden></p>
+            <p id="extreme-note" class="caution" hidden></p>
+            <p id="test-line" class="test-line">
+              <span id="test-line-text"></span>
+              <a href="method.html" data-method-link data-i18n="testLine.link"></a>
+            </p>
+          </div>
+
+          <!-- The switch applies to everything below it: the yearly totals and the calendar. -->
+          <div class="series-bar">
+            <fieldset class="segmented">
+              <legend class="visually-hidden" data-i18n="view.legend"></legend>
+              <label><input type="radio" name="view" value="harmonized" /><span data-i18n="view.harmonized"></span></label>
+              <label><input type="radio" name="view" value="raw" /><span data-i18n="view.raw"></span></label>
+            </fieldset>
+            <p id="view-hint" class="hint"></p>
+          </div>
+          <p id="raw-banner" class="notice" hidden></p>
+
+          <section class="card" aria-labelledby="yearly-heading">
+            <h3 id="yearly-heading" data-i18n="yearly.heading"></h3>
+            <div id="yearly" class="chart"></div>
+            <p class="hint" data-i18n="yearly.hatched"></p>
+            <p id="trend-line-hint" class="hint" data-i18n="yearly.trendLine" hidden></p>
+            <p id="trend-text" class="trend-text" hidden></p>
+          </section>
+
+          <section class="card calendar-card" aria-labelledby="calendar-heading">
+            <div class="card-head">
+              <h3 id="calendar-heading" data-i18n="calendar.heading"></h3>
+              <div class="toolbar">
+                <fieldset class="segmented">
+                  <legend class="visually-hidden" data-i18n="mode.legend"></legend>
+                  <label><input type="radio" name="mode" value="count" /><span data-i18n="mode.count"></span></label>
+                  <label><input type="radio" name="mode" value="anomaly" /><span data-i18n="mode.anomaly"></span></label>
+                </fieldset>
+                <button type="button" id="table-toggle" class="button" aria-pressed="false" data-i18n="calendar.tableToggle"></button>
+              </div>
+            </div>
+
+            <fieldset class="year-range">
+              <legend data-i18n="years.legend"></legend>
+              <div class="dual-range">
+                <div class="dual-range-track"><div id="year-range-fill" class="dual-range-fill"></div></div>
+                <input id="year-from" type="range" step="1" data-i18n-attr="aria-label:years.from" />
+                <input id="year-to" type="range" step="1" data-i18n-attr="aria-label:years.to" />
+              </div>
+              <output id="year-range-label" for="year-from year-to"></output>
+            </fieldset>
+
+            <div id="calendar" class="calendar"></div>
+            <div id="calendar-table" class="calendar-table" hidden></div>
+            <p id="cell-detail" class="cell-detail" aria-live="polite"></p>
+          </section>
+
+          <section id="seasonal-card" class="card" aria-labelledby="seasonal-heading">
+            <h3 id="seasonal-heading" data-i18n="seasonal.heading"></h3>
+            <p id="year-so-far" class="trend-text" hidden></p>
+            <div id="seasonal" class="chart"></div>
+          </section>
+
+          <section class="card downloads" aria-labelledby="downloads-heading">
+            <h3 id="downloads-heading" data-i18n="downloads.heading"></h3>
+            <div class="download-row">
+              <button type="button" id="download-calendar" class="button" data-i18n="downloads.calendarCsv"></button>
+              <button type="button" id="download-png" class="button" data-i18n="downloads.png"></button>
+            </div>
+            <fieldset class="csv-dates">
+              <legend data-i18n="dates.legend"></legend>
+              <label>
+                <span data-i18n="dates.from"></span>
+                <input id="date-from" type="date" />
+              </label>
+              <label>
+                <span data-i18n="dates.to"></span>
+                <input id="date-to" type="date" />
+              </label>
+              <button type="button" id="download-hotspots" class="button" data-i18n="downloads.hotspotsCsv"></button>
+              <p id="hotspots-hint" class="hint" data-i18n="downloads.hotspotsNation" hidden></p>
+            </fieldset>
+            <div id="download-status" class="download-status" role="status" hidden></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p id="data-through"></p>
+      <p id="footer-firms"></p>
+      <p data-i18n="footer.boundaries"></p>
+      <p><a href="https://github.com/Ardbiu/FOCOS" data-i18n="footer.source"></a></p>
+      <p id="footer-si" data-i18n="footer.si"></p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Focos</title>
+    <meta name="description" content="%i18n:app.description%" />
+    <meta property="og:title" content="%i18n:method.pageTitle%" />
+    <meta property="og:description" content="%i18n:app.description%" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://ardbiu.github.io/FOCOS/method.html" />
+    <meta property="og:image" content="https://ardbiu.github.io/FOCOS/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="%i18n:app.shareAlt%" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body class="method-page">
+    <!-- The product name is the only text kept in the HTML. Every other string
+         comes from src/i18n; every number comes from validation.json or meta.json. -->
+    <a class="skip-link" href="#method" data-i18n="nav.skip"></a>
+
+    <header class="site-header">
+      <div class="brand">
+        <h1>Focos</h1>
+        <p id="tagline" class="tagline" data-i18n="app.tagline"></p>
+      </div>
+      <nav class="site-nav">
+        <div class="lang-toggle" role="group" data-i18n-attr="aria-label:lang.label">
+          <button type="button" id="lang-en" class="lang-button" lang="en" aria-pressed="true" data-i18n="lang.en" data-i18n-attr="aria-label:lang.enName"></button>
+          <button type="button" id="lang-es" class="lang-button" lang="es" aria-pressed="false" data-i18n="lang.es" data-i18n-attr="aria-label:lang.esName"></button>
+        </div>
+        <a id="back-link" href="./" data-i18n="method.back"></a>
+      </nav>
+    </header>
+
+    <noscript><p class="noscript">%i18n:app.noscript% <a href="https://github.com/Ardbiu/FOCOS">github.com/Ardbiu/FOCOS</a></p></noscript>
+
+    <main id="method" class="method" tabindex="-1">
+      <h2 class="method-title" data-i18n="method.title"></h2>
+      <div id="method-status" class="load-status" role="status" hidden></div>
+
+      <div id="method-body" hidden>
+        <section id="question" aria-labelledby="question-heading">
+          <h3 id="question-heading" data-i18n="method.question.heading"></h3>
+          <p data-i18n="method.question.p1"></p>
+          <p data-i18n="method.question.p2"></p>
+        </section>
+
+        <section id="naive" aria-labelledby="naive-heading">
+          <h3 id="naive-heading" data-i18n="method.naive.heading"></h3>
+          <p id="naive-text"></p>
+          <figure>
+            <div id="chart-before-after" class="chart"></div>
+            <figcaption data-i18n="method.naive.caption"></figcaption>
+          </figure>
+          <div id="trends-part" hidden>
+            <p id="trends-text"></p>
+            <p id="trend-check" hidden></p>
+            <div id="table-trends" class="table-scroll" tabindex="0"></div>
+            <p class="hint" data-i18n="method.trends.note"></p>
+          </div>
+        </section>
+
+        <section id="steps" aria-labelledby="steps-heading">
+          <h3 id="steps-heading" data-i18n="method.steps.heading"></h3>
+          <ol class="steps">
+            <li data-i18n="method.steps.s1"></li>
+            <li data-i18n="method.steps.s2"></li>
+            <li id="step-3"></li>
+          </ol>
+          <p id="loyo-text"></p>
+        </section>
+
+        <section id="test" aria-labelledby="test-heading">
+          <h3 id="test-heading" data-i18n="method.test.heading"></h3>
+          <p id="test-design"></p>
+          <figure>
+            <div id="chart-scatter" class="chart"></div>
+            <figcaption data-i18n="method.test.scatterCaption"></figcaption>
+          </figure>
+          <div id="table-results" class="table-scroll" tabindex="0"></div>
+          <p class="hint" data-i18n="method.test.notes"></p>
+          <p id="test-targets"></p>
+          <p id="test-peak"></p>
+        </section>
+
+        <section id="by-count" aria-labelledby="by-count-heading">
+          <h3 id="by-count-heading" data-i18n="method.byCount.heading"></h3>
+          <div id="by-count-part">
+            <p data-i18n="method.byCount.text"></p>
+            <div id="table-by-count" class="table-scroll" tabindex="0"></div>
+          </div>
+          <div id="by-level-part">
+            <p id="by-level-text"></p>
+            <div id="table-by-level" class="table-scroll" tabindex="0"></div>
+          </div>
+        </section>
+
+        <section id="by-province" aria-labelledby="by-province-heading">
+          <h3 id="by-province-heading" data-i18n="method.byProvince.heading"></h3>
+          <p id="province-text"></p>
+          <figure>
+            <div id="chart-province-bias" class="chart"></div>
+            <figcaption id="province-caption"></figcaption>
+          </figure>
+        </section>
+
+        <section id="test-years" aria-labelledby="test-years-heading">
+          <h3 id="test-years-heading" data-i18n="method.testYears.heading"></h3>
+          <div id="table-test-years" class="table-scroll" tabindex="0"></div>
+        </section>
+
+        <section id="beyond" aria-labelledby="beyond-heading">
+          <h3 id="beyond-heading" data-i18n="method.beyond.heading"></h3>
+          <p id="ratio-text"></p>
+          <figure>
+            <div id="chart-ratio" class="chart"></div>
+            <figcaption id="ratio-caption" data-i18n="method.beyond.ratioCaption"></figcaption>
+          </figure>
+          <p id="seam-text"></p>
+          <figure>
+            <div id="chart-seam" class="chart"></div>
+            <figcaption data-i18n="method.beyond.seamCaption"></figcaption>
+          </figure>
+        </section>
+
+        <section id="noaa20" aria-labelledby="noaa20-heading">
+          <h3 id="noaa20-heading" data-i18n="method.noaa20.heading"></h3>
+          <p id="noaa20-text"></p>
+          <p id="noaa20-fill" hidden></p>
+          <div id="table-noaa20" class="table-scroll" tabindex="0"></div>
+        </section>
+
+        <section id="limits" aria-labelledby="limits-heading">
+          <h3 id="limits-heading" data-i18n="method.limits.heading"></h3>
+          <ul id="limits-list"></ul>
+        </section>
+
+        <section id="partner" aria-labelledby="partner-heading" hidden>
+          <h3 id="partner-heading" data-i18n="method.partner.heading"></h3>
+          <div id="partner-body"></div>
+        </section>
+
+        <section id="data" aria-labelledby="data-heading">
+          <h3 id="data-heading" data-i18n="method.data.heading"></h3>
+          <ul id="data-list"></ul>
+          <p id="excluded-text"></p>
+          <p id="data-through" class="hint"></p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p id="footer-firms"></p>
+      <p><a href="https://github.com/Ardbiu/FOCOS" data-i18n="footer.source"></a></p>
+      <p id="footer-si" data-i18n="footer.si"></p>
+    </footer>
+
+    <script type="module" src="/src/method-main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,569 @@
+{
+  "app": {
+    "name": "Focos",
+    "title": "Focos: a fire calendar for Argentina",
+    "description": "See when any area of Argentina burns, which years were worst and whether this month is unusual. One record since 2003, harmonized from NASA MODIS and VIIRS hotspots and tested on held-out years.",
+    "tagline": "One fire calendar for Argentina from MODIS and VIIRS, since 2003",
+    "lede": "MODIS and VIIRS count fires differently. Focos converts VIIRS to MODIS-equivalent hotspots, tested on years it never saw, so every year since 2003 can be compared.",
+    "loading": "Loading the fire record…",
+    "loadingGrid": "Loading the fire grid for this area…",
+    "loadError": "The data could not be loaded ({file}).",
+    "loadErrorPlain": "The data could not be loaded.",
+    "retry": "Try again",
+    "noscript": "Focos draws its fire calendar with JavaScript, which is turned off in this browser. The method, the results and the data are on GitHub:",
+    "shareAlt": "The Focos page for all of Argentina: a map of the provinces coloured by their fire trend since 2003, and the national trend in a sentence."
+  },
+  "nav": {
+    "method": "How it works",
+    "skip": "Skip to results"
+  },
+  "footer": {
+    "dataThrough": "Data through {date}",
+    "firms": "Fire data: NASA FIRMS active fire detections from MODIS (Aqua) and VIIRS ({viirs}).",
+    "boundaries": "Province boundaries: Georef, Argentina (CC BY 4.0).",
+    "source": "Source code on GitHub",
+    "si": "Built with Claude, an AI assistant (Anthropic). “How SI was used” in the README says what it did."
+  },
+  "area": {
+    "heading": "Choose an area",
+    "province": "Province",
+    "nation": "All of Argentina",
+    "custom": "Drawn area or circle",
+    "mapSummary": "Draw on the map or pick a point",
+    "touchHint": "Tap the map to move it",
+    "overlay": {
+      "label": "Radar mosaic 2022 (CONAE SAOCOM)",
+      "attribution": "SAOCOM mosaic: CONAE",
+      "error": "CONAE’s map service did not respond."
+    },
+    "drawHint": "Or draw a polygon or a rectangle on the map, or click a province.",
+    "draw": {
+      "polygon": "Draw a polygon",
+      "rectangle": "Draw a rectangle",
+      "rectangleHint": "Press and drag on the map"
+    },
+    "mapLabel": "Map of Argentina with its provinces",
+    "mapError": "The map could not be loaded. The province list and the point and radius form still work.",
+    "circle": {
+      "legend": "Point and radius",
+      "lat": "Latitude",
+      "lon": "Longitude",
+      "km": "Radius (km)",
+      "apply": "Use this circle",
+      "invalid": "Enter a latitude between −90 and 90 and a longitude between −180 and 180, in decimal degrees.",
+      "clamped": "The radius was set to {km} km (allowed: 5 to 300)."
+    },
+    "name": {
+      "polygon": "Drawn area",
+      "circle": "{km} km around {lat}, {lon}"
+    },
+    "status": {
+      "clipped": "Part of this area is outside Argentina. Only the part inside is counted.",
+      "outside": "This area is outside Argentina, so there is no fire record for it. Choose a province, draw on the map, or enter a point inside the country.",
+      "tooSmall": "This area is smaller than one grid cell (about 5 km), so the cell that contains its center is shown.",
+      "thin": "This area is narrower than one grid cell (about 5 km) and holds no cell’s center, so the cells it passes through are shown.",
+      "custom": "Drawn areas and circles are resolved at about 5 km."
+    },
+    "trendLegend": {
+      "title": "Trend since {from}",
+      "falling": "Falling",
+      "none": "No significant trend",
+      "rising": "Rising",
+      "unrated": "Too little fire",
+      "unsure": "Dashed: the trend fails its check"
+    }
+  },
+  "years": {
+    "legend": "Years shown",
+    "from": "First year",
+    "to": "Last year",
+    "range": "{from}–{to}"
+  },
+  "dates": {
+    "legend": "Dates for the hotspots CSV",
+    "from": "From",
+    "to": "To"
+  },
+  "months": {
+    "short": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "long": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
+  },
+  "ordinal": {
+    "one": "{n}st",
+    "two": "{n}nd",
+    "few": "{n}rd",
+    "other": "{n}th"
+  },
+  "period": {
+    "month": "{month} {year}",
+    "partial": {
+      "one": "{month} 1, {year}",
+      "other": "{month} 1–{n}, {year}"
+    },
+    "monthLong": "{month} {year}"
+  },
+  "unit": {
+    "hotspots": {
+      "one": "{n} MODIS-equivalent hotspot",
+      "other": "{n} MODIS-equivalent hotspots"
+    }
+  },
+  "verdict": {
+    "season": {
+      "range": "Fire season here runs {start}–{end}.",
+      "rangePeak": "Fire season here runs {start}–{end} and peaks in {peak}.",
+      "spread": "Fire here is spread over most of the year and peaks in {peak}.",
+      "spreadOnly": "Fire here is spread over most of the year.",
+      "single": "Fire season here is concentrated in {month}.",
+      "none": "There is no clear fire season here."
+    },
+    "rank": {
+      "highest": "the highest",
+      "nth": "the {ordinal} highest",
+      "lowest": "the lowest",
+      "highestOf": "the highest {what}",
+      "nthOf": "the {ordinal} highest {what}",
+      "lowestOf": "the lowest {what}",
+      "whatPartial": {"one": "{month} 1", "other": "{month} 1–{n}"}
+    },
+    "month": {
+      "ratio": "{period} is {ratio}× the usual level, {rank} since {since}.",
+      "zero": "{period} has no hotspots; the usual level is about {median}.",
+      "rare": "{period} has {count}, {rank} since {since}. Usually almost no fire here this month.",
+      "rareZero": "{period} has no hotspots. Usually almost no fire here this month.",
+      "rareSmall": "{period} has {count}, too few to rank against other years. Usually almost no fire here this month.",
+      "incomplete": "{period} has incomplete satellite data, so it is not compared with other years.",
+      "noBaseline": "{period} has {count}. There are not enough complete years to compare it.",
+      "noData": "There is no data for {period} yet."
+    },
+    "label": {
+      "latest": "Latest month",
+      "selected": "Selected month",
+      "trend": "Long-term trend"
+    }
+  },
+  "view": {
+    "legend": "Series",
+    "harmonized": "Harmonized",
+    "raw": "Raw",
+    "hint": "Raw shows the counts before harmonization, with the jump at the sensor switch in {year}."
+  },
+  "mode": {
+    "legend": "Color by",
+    "count": "Count",
+    "anomaly": "Anomaly"
+  },
+  "divider": {
+    "harmonized": "MODIS above, VIIRS harmonized below",
+    "raw": "MODIS above, raw VIIRS below: not comparable"
+  },
+  "rawBanner": "Raw view: counts as each sensor reported them. MODIS up to {before} and raw VIIRS from {year} are not comparable. The summary, the anomalies and the seasonal profile are switched off.",
+  "calendar": {
+    "heading": "Fire calendar",
+    "label": "Fire calendar for {area}, {from} to {to}. Each cell is one month; use the arrow keys to move and Enter to select. The same numbers are in the table view.",
+    "year": "Year",
+    "yearTotal": "Year total",
+    "total": "Total",
+    "fireSeason": "fire season",
+    "tableToggle": "View as table",
+    "caption": {
+      "harmonized": "MODIS-equivalent hotspots per month, {area}",
+      "raw": "Raw detections per month (not comparable across 2012), {area}"
+    },
+    "notes": {
+      "incomplete": "* incomplete satellite data",
+      "partial": {
+        "one": "† month so far (day 1)",
+        "other": "† month so far (days 1–{n})"
+      },
+      "nodata": "– no data yet"
+    },
+    "srIncomplete": "incomplete satellite data",
+    "srPartial": "month so far",
+    "srNodata": "no data yet",
+    "empty": "No hotspots were recorded in this area in these years.",
+    "detailHint": "Select a month to see its numbers here and its satellite detections on the map.",
+    "detailHintNation": "Select a month to see its numbers here. To see its satellite detections on the map, choose a province or draw an area."
+  },
+  "legend": {
+    "count": "MODIS-equivalent hotspots per month",
+    "raw": "Raw detections per month, on the color scale of the harmonized view",
+    "anomaly": "Compared with the usual level for the month",
+    "atLeast": "≥ {value}",
+    "aboveZero": "> 0",
+    "zero": "None",
+    "rare": "Usually almost no fire",
+    "hatched": "Incomplete or partial month",
+    "nodata": "No data",
+    "ticks": [
+      "¼×",
+      "½×",
+      "usual",
+      "2×",
+      "4×"
+    ]
+  },
+  "category": {
+    "record_high": "Record for this month",
+    "well_above": "Well above normal",
+    "above": "Above normal",
+    "near": "Near normal",
+    "below": "Below normal"
+  },
+  "cell": {
+    "raw": {
+      "one": "{n} raw detection",
+      "other": "{n} raw detections"
+    },
+    "rawNote": "Raw counts are not comparable across 2012",
+    "median": "Usual level for this month (median): {median}",
+    "ratio": "{ratio}× the usual level",
+    "rare": "Usually almost no fire here this month",
+    "rank": "{rank} since {since}",
+    "error": "In the test, a count this size typically came within {pct}% of MODIS ({carrier})",
+    "errorPlain": "In the test, a count this size typically came within {pct}% of MODIS",
+    "errorTooSmall": "Too few hotspots to rate the typical error",
+    "incomplete": "Incomplete satellite data: not compared with other years",
+    "partial": {
+      "one": "Month so far (day 1), compared with the same day in other years",
+      "other": "Month so far (days 1–{n}), compared with the same days in other years"
+    },
+    "partialRaw": {
+      "one": "Month so far (day 1)",
+      "other": "Month so far (days 1–{n})"
+    },
+    "nodata": "No data yet"
+  },
+  "testLine": {
+    "text": "Tested on {from}–{to}, years the method never saw: a province’s monthly count typically came within {error}% of MODIS (naive stitch: {naive}% off). Errors are larger for small areas and small counts.",
+    "link": "How it works"
+  },
+  "robust": {
+    "holds": "With that gap removed from every VIIRS year, the trend holds: {sentence}",
+    "holdsNone": "With that gap removed from every VIIRS year, there is still no significant trend.",
+    "changes": "With that gap removed from every VIIRS year, the trend would read: {sentence}"
+  },
+  "caution": {
+    "above": "In {name} the harmonized record ran {pct}% above MODIS in the {from}–{to} test.",
+    "below": "In {name} the harmonized record ran {pct}% below MODIS in the {from}–{to} test.",
+    "extremeLow": "On average, months at {band} read about {pct}% low in the test; single months varied around that.",
+    "extremeHigh": "On average, months at {band} read about {pct}% high in the test; single months varied around that.",
+    "band5": "5 to 10 times their usual level",
+    "band10": "10 times their usual level or more"
+  },
+  "trend": {
+    "heading": "Trend",
+    "rising": "Rising about {pct}% per decade since {from} ({p}).",
+    "falling": "Falling about {pct}% per decade since {from} ({p}).",
+    "risingPerYear": "Rising by about {amount} a year since {from} ({p}).",
+    "fallingPerYear": "Falling by about {amount} a year since {from} ({p}).",
+    "none": "No significant trend since {from}.",
+    "rare": "Too little fire here to assess a trend.",
+    "short": "Too few complete years to assess a trend.",
+    "pEquals": "p = {p}",
+    "pBelow": "p < {p}",
+    "raw": "Raw counts: {sentence} This includes the sensor switch in {year}.",
+    "rawWouldSay": "Stitched without harmonizing, raw counts would show: {sentence}",
+    "recentNone": "Since {year} alone, no significant trend.",
+    "unit": {
+      "hotspots": {
+        "one": "{n} hotspot",
+        "other": "{n} hotspots"
+      },
+      "detections": {
+        "one": "{n} detection",
+        "other": "{n} detections"
+      }
+    }
+  },
+  "yearly": {
+    "heading": "Yearly totals",
+    "label": "Yearly totals for {area}, {from} to {to}. The highest year is {top}.",
+    "bar": "{year}: {count}",
+    "barPartial": "{year}: {count} (year not complete)",
+    "hatched": "Hatched: the current year, or a year with an incomplete month.",
+    "switch": "VIIRS from {year}",
+    "eraModis": "MODIS",
+    "eraViirs": "VIIRS, harmonized",
+    "eraViirsRaw": "VIIRS, raw",
+    "trendTitle": "Trend fitted to the complete years",
+    "trendLine": "Blue line: the trend, fitted to the complete years.",
+    "empty": "No hotspots were recorded in this area."
+  },
+  "seasonal": {
+    "heading": "Seasonal profile",
+    "label": "Seasonal profile for {area}: the median and the middle half of years for each month, with {year}.",
+    "median": "Median of {from}–{to}",
+    "band": "Middle half of years",
+    "year": "{year}",
+    "open": "Partial or incomplete month",
+    "partialUsual": "Usual level for {month} 1–{day}",
+    "point": "{month} {year}: {count}",
+    "empty": "No hotspots were recorded in this area."
+  },
+  "csv": {
+    "hotspotsTitle": "Focos: satellite fire detections with MODIS-equivalent weights",
+    "calendarTitle": "Focos: MODIS-equivalent fire calendar",
+    "area": "Area: {area}",
+    "dateRange": "Date range: {from} to {to} (local dates)",
+    "monthRange": "Date range: {from} to {to}",
+    "dataThrough": "Data through: {date}",
+    "calibration": "Calibration: {candidate}, tuned on {train} and tested on {test}",
+    "typicalError": "Typical error: {error}%, the median absolute error of province-months of 20 or more hotspots in the test years (half came closer, half not)",
+    "source": "Data source: NASA FIRMS active fire detections, MODIS (Aqua) and VIIRS ({viirs})",
+    "site": "Site: {url}",
+    "code": "Built with Claude, an AI assistant (Anthropic); “How SI was used” in the README at {repo} says what it did",
+    "weight": "modis_equivalent_weight: the share of one MODIS-equivalent hotspot that the detection stands for. Its sum over a province and a month is the count in the calendar. It is 0 for detections outside the harmonized series.",
+    "weightDrawn": "modis_equivalent_weight: the share of one MODIS-equivalent hotspot that the detection stands for. It is 0 for detections outside the harmonized series. The calendar of a drawn area or a circle is summed on a grid of about 5 km, so the sum of these weights can differ from the count the calendar shows.",
+    "category": "category: record_high, well_above, above, near or below the usual level for the month; rare where that level is below 5 hotspots (no ratio); empty where the month is not compared."
+  },
+  "downloads": {
+    "heading": "Downloads",
+    "calendarCsv": "Calendar CSV",
+    "png": "Calendar PNG",
+    "hotspotsCsv": "Hotspots CSV",
+    "preparing": "Preparing the hotspots CSV…",
+    "saved": {
+      "one": "Saved {n} satellite detection to {file}.",
+      "other": "Saved {n} satellite detections to {file}."
+    },
+    "savedFile": "Saved {file}.",
+    "tooLarge": "The hotspots CSV is made for a province or a drawn area, and this one holds too many detections for one file. Choose a province, or draw a smaller area.",
+    "hotspotsNation": "For the whole country the hotspots CSV would be too large: choose a province or draw an area first.",
+    "outside": "There are no detections to download for an area outside Argentina.",
+    "pngError": "The picture could not be made in this browser.",
+    "pngTitle": "{area} · {from}–{to} · {what}",
+    "pngFooter": "Focos · data: NASA FIRMS · built with AI (Claude)",
+    "pngCount": "MODIS-equivalent hotspots per month",
+    "pngAnomaly": "MODIS-equivalent hotspots per month, colored by anomaly",
+    "pngRaw": "Raw detections per month (not comparable across 2012)"
+  },
+  "dots": {
+    "loading": "Loading the satellite detections of {period}…",
+    "shown": {
+      "one": "{n} satellite detection of {period} on the map.",
+      "other": "{n} satellite detections of {period} on the map."
+    },
+    "capped": "Showing {shown} of {total} satellite detections of {period}.",
+    "weighed": "Weighted, the month’s detections add up to about {count}.",
+    "weighedDrawn": "The calendar of a drawn area is counted on the 5 km grid, so it can differ.",
+    "none": "No satellite detections in {period} in this area.",
+    "tooLarge": "This area has too many detections to draw on the map. Choose a province, or draw a smaller area, to see them.",
+    "error": "The detections could not be loaded (tile {tile}).",
+    "errorPlain": "The detections could not be loaded."
+  },
+  "lang": {
+    "label": "Language",
+    "en": "EN",
+    "es": "ES",
+    "enName": "English",
+    "esName": "Español"
+  },
+  "link": {
+    "copy": "Copy link",
+    "copied": "Link copied.",
+    "manual": "Copy this link: {url}"
+  },
+  "stories": {
+    "heading": "Three fires to start from",
+    "delta": "Paraná Delta",
+    "pampa": "La Pampa grasslands",
+    "corrientes": "Corrientes wetlands"
+  },
+  "format": {
+    "percent": "{n}%",
+    "times": "{n}×"
+  },
+  "method": {
+    "pageTitle": "How it works · Focos",
+    "title": "How it works",
+    "back": "Back to the calendar",
+    "loading": "Loading the test results…",
+    "question": {
+      "heading": "1. The question",
+      "p1": "Argentina’s fire record comes from two kinds of satellite sensor. MODIS on the Aqua satellite has reported hotspots since 2002. VIIRS, which flies on S-NPP since 2012 and on NOAA-20 since 2018, sees smaller fires, so it reports several times as many for the same fire season.",
+      "p2": "Aqua is drifting in its orbit and is at the end of its life, so the record has to move to VIIRS. Can two records that count differently be read as one?"
+    },
+    "naive": {
+      "heading": "2. The naive answer, and why it fails",
+      "text": "The simple answer is to put the VIIRS counts after the MODIS counts. That draws a jump no fire caused: in {year}, the first year both sensors flew, VIIRS reported {viirs} detections where Aqua’s record counts {aqua} fire cell-passes. Any trend read across that jump is false.",
+      "caption": "Hotspots in Argentina per year. The harmonized VIIRS line is the record Focos shows.",
+      "label": "Yearly national totals from {from} to {to}: Aqua MODIS, raw VIIRS and harmonized VIIRS.",
+      "aqua": "Aqua MODIS (the reference)",
+      "raw": "VIIRS, raw",
+      "harmonized": "VIIRS, harmonized"
+    },
+    "steps": {
+      "heading": "3. The method, in three steps",
+      "s1": "Clean both sensors the same way. Keep only the detections the archive labels as vegetation fire, which drops the gas flares and other fixed heat sources it has labelled (not every one is labelled; see Limits), drop low-confidence detections, and give every detection its local date.",
+      "s2": "Count both sensors the same way. The unit is a fire cell-pass: one cell of about 1 km that burned on one local date, by day or by night. A fire that VIIRS sees as five pixels counts once.",
+      "s3": "Convert VIIRS to MODIS-equivalent. For each region, season, and day or night, the ratio of Aqua to VIIRS fire cell-passes in {from}–{to} becomes a weight on every VIIRS detection. Every number in the app is a sum of those weights. Only VIIRS is converted down; nobody can invent the small fires MODIS never saw.",
+      "loyo": "Three ways of setting the ratios were compared on the training years, leaving one year out at a time. Their typical errors were {c1}, {c2} and {c3}; the naive stitch scored {c0}. The simplest candidate within a tenth of the best was kept ({chosen}) and frozen before the test."
+    },
+    "test": {
+      "heading": "4. The test",
+      "design": "The ratios were tuned on {trainFrom}–{trainTo} only. The years {testFrom} and {testTo} were kept aside until the method was frozen. On those years the harmonized VIIRS record is compared with what Aqua counted. The results were recomputed once, after a second review (by a separate AI session that had not written the code) changed which days count as outages; the frozen ratios did not change.",
+      "scatterCaption": "Each dot is one province in one month of the test years. On the line, VIIRS equals Aqua. Both axes are logarithmic.",
+      "scatterLabel": "Province-months of the test years: Aqua hotspots against VIIRS, raw and harmonized, on logarithmic axes. {n} province-months.",
+      "axisAqua": "Aqua MODIS hotspots",
+      "axisViirs": "VIIRS hotspots",
+      "line": "VIIRS = Aqua",
+      "tableCaption": "Test-year results at three scales, harmonized next to the naive stitch",
+      "scale": "Scale",
+      "n": "Cases",
+      "bias": "Bias",
+      "error": "Typical error",
+      "correlation": "Correlation",
+      "harmonized": "Harmonized",
+      "naive": "Naive stitch",
+      "scales": {
+        "national_month": "Nation, by month",
+        "province_month": "Province, by month",
+        "tile_month": "1° tile, by month"
+      },
+      "notes": "Bias is the total over or under Aqua’s. Typical error is the median absolute error, in percent. Correlation is taken on the logarithm of the counts. Only cases with at least 20 Aqua hotspots are scored.",
+      "targets": "Targets set before the test: national bias within ±{biasMax}, province-month error at most {mapeMax}, national correlation at least {corrMin}.",
+      "met": {
+        "all": "All three were met.",
+        "some": "Not all were met: {list}."
+      },
+      "targetNames": {
+        "national_bias": "national bias",
+        "province_month_mape": "province-month error",
+        "national_month_logcorr": "national correlation"
+      },
+      "peak": "The busiest month of the year matched Aqua’s in {share} of {n} province-years."
+    },
+    "byCount": {
+      "heading": "5. Small counts and extreme months",
+      "text": "The error depends on how many hotspots are being counted. The app uses these bands when it shows a typical error, and gives none below 5 hotspots.",
+      "caption": "Typical error by the size of the count (province-months, test years)",
+      "band": "Aqua hotspots",
+      "levelText": "It also depends on how unusual the month was. Extreme months are understated: about {pct} low at 5 times the usual level or more.",
+      "levelCaption": "Bias by how unusual the month was for Aqua (province-months, test years)",
+      "level": "Month against its usual level"
+    },
+    "byProvince": {
+      "heading": "6. Province by province",
+      "text": "Over the two test years, the harmonized total ran more than {limit} from Aqua’s in {count} of {total} provinces. The app says so when one of them is selected.",
+      "caption": "Harmonized total against Aqua’s, test years. Dark bars are beyond ±{limit}.",
+      "label": "Bias of the harmonized record by province on the test years, from {top} ({topBias}) to {bottom} ({bottomBias}).",
+      "bar": "{name}: {bias}"
+    },
+    "testYears": {
+      "heading": "7. The two test years",
+      "caption": "National totals of each test year",
+      "year": "Year",
+      "aqua": "Aqua MODIS",
+      "harmonized": "Harmonized VIIRS"
+    },
+    "beyond": {
+      "heading": "8. Beyond the test",
+      "ratioText": "The yearly ratio of Aqua to harmonized VIIRS was {first} in {firstYear} and {last} in {lastYear}. It was highest in {maxYear} ({max}) and lowest in {minYear} ({min}). A later Aqua overpass would raise it, and S-NPP’s outages in 2024 may add to that. The record reads high in months with little fire, which lowers the ratio in a quiet year. This page does not prove the cause.",
+      "ratioCaption": "Aqua ÷ harmonized VIIRS, national, by year. The shaded years are the test years.",
+      "ratioCaptionEnds": "{caption} {year} stops when {name} stopped delivering data.",
+      "ratioLabel": "Yearly ratio of Aqua to harmonized VIIRS from {from} to {to}.",
+      "seamText": "At the seam, from {from} to {to}, both sensors flew and the series switches from one to the other. Month by month the harmonized VIIRS total ran {bias} from Aqua’s, with a typical error of {mape} over {n} months.",
+      "seamCaption": "National hotspots per month across the switch from MODIS to VIIRS",
+      "seamLabel": "Monthly national totals from {from} to {to}: Aqua MODIS and harmonized VIIRS."
+    },
+    "noaa20": {
+      "heading": "9. A third satellite: NOAA-20",
+      "text": "S-NPP stopped delivering data on 2 November 2026. NOAA-20 carries the same VIIRS instrument in the same orbit and carries the record from {month}. Its ratios were fitted on {trainFrom}–{trainTo}, the stable years it shared with Aqua, and tested on the same held-out years.",
+      "fill": "NOAA-20 also stands in for S-NPP on {days} days since {year}: the days on which S-NPP delivered no data, or none by day. Those days carry NOAA-20’s harmonized counts. This was added after the held-out test and changes none of its results, which compare S-NPP alone with Aqua.",
+      "textFuture": "S-NPP stopped delivering data on 2 November 2026. NOAA-20 carries the same VIIRS instrument in the same orbit and will carry the record from November 2026. Its ratios are already fitted, on {trainFrom}–{trainTo}, the stable years it shared with Aqua, and tested on the same held-out years.",
+      "caption": "NOAA-20: the held-out test against Aqua, and the handover check against harmonized S-NPP",
+      "testRow": "Test against Aqua, {scale}",
+      "handoverRow": "Handover {from}–{to} against S-NPP, {scale}",
+      "check": "Check"
+    },
+    "limits": {
+      "heading": "10. Limits",
+      "items": [
+        "Satellites miss fires under cloud or thick smoke, and small or short fires between passes.",
+        "“MODIS-equivalent” undercounts small fires by design. The raw VIIRS detections are still in the hotspots CSV.",
+        "Hotspot counts are not burned area.",
+        "Drawn areas and circles are resolved at about 5 km.",
+        "Harmonized values carry a typical error, larger for small counts and for single provinces.",
+        "Fixed heat sources labelled as fire inflate the VIIRS era in a few provinces.",
+        "Where the record runs into the current year, its latest months use near-real-time data, which is revised later.",
+        "This is a record of the past and a measure of how unusual a month is. It is not a forecast."
+      ],
+      "extreme": "Extreme months are understated.",
+      "extremePct": "Extreme months are understated: about {pct} low at 5 times the usual level or more.",
+      "noaa20Provinces": "In {count} of {total} provinces NOAA-20’s gap to Aqua in the test years differs from S-NPP’s by more than 10 points (the most in {name}: S-NPP {snpp}, NOAA-20 {noaa}). There the months NOAA-20 carries, from {month} and on the days it fills, can sit above or below the S-NPP months."
+    },
+    "partner": {
+      "heading": "Partner-agency cross-check"
+    },
+    "data": {
+      "heading": "Data and credits",
+      "items": [
+        "NASA FIRMS MODIS Collection 6.1 active fire detections (Aqua).",
+        "NASA FIRMS VIIRS 375 m active fire detections (S-NPP and NOAA-20).",
+        "Province boundaries: Georef, Argentina (CC BY 4.0).",
+        "Base map: OpenStreetMap contributors.",
+        "Optional map layer: SAOCOM L-band radar mosaics, 2022, CONAE (Argentina’s space agency).",
+        "Built with Claude, an AI assistant (Anthropic). “How SI was used” in the README says what it did."
+      ],
+      "excluded": "{days} days are left out of every comparison: the days on which one of the sensors delivered no data, and a window from 16 August to 2 September 2020 that was set aside before the test as a suspected Aqua outage. Today’s archive has Aqua data on most of those days, so leaving them out is only a precaution.",
+      "through": "Data through {date}. Test results computed {generated}."
+    },
+    "trends": {
+      "text": "Province by province, the same thing happens. Raw counts rise in {rawRising} of {total} provinces, because VIIRS reports several detections where MODIS reported one. The harmonized record rises in {rising}, falls in {falling}, shows no significant trend in {none} and has too little fire to assess in {unrated}.",
+      "caption": "Trend of the yearly totals by province: harmonized record and raw counts",
+      "colProvince": "Province",
+      "colHarmonized": "Harmonized record",
+      "colRaw": "Raw counts",
+      "colCheck": "With the test gap removed",
+      "holds": "Holds",
+      "changes": "Changes to: {trend}",
+      "note": "The last column is a check, not a correction. Where a province’s harmonized record ran more than 15% from MODIS in the test years, its trend is tested again with that gap taken out of every VIIRS year. No count in the app changes. Raw percentages run very high where the record started from very little fire.",
+      "check": "A check that does not lean on the method. From {from} to {to}, Aqua MODIS alone, the same sensor all along: {aqua}. The harmonized record: {harmonized}. Aqua’s orbit has drifted to a later overpass, nearer the afternoon peak of fire, so its last years may read high and this check, if anything, understates the fall. It supports the national trend but does not prove it.",
+      "recent": "From {year} to {to} alone, Aqua: {aqua}; harmonized record: {harmonized}.",
+      "recentStep": "From {year} to {to} alone, Aqua: {aqua}; harmonized record: {harmonized}. Most of the fall came before {year}."
+    }
+  },
+  "trendShort": {
+    "rising": "Rising, {pct}% per decade",
+    "risingPlain": "Rising",
+    "falling": "Falling, {pct}% per decade",
+    "fallingPlain": "Falling",
+    "none": "No significant trend",
+    "rare": "Too little fire",
+    "short": "Too few years"
+  },
+  "ytd": {
+    "ratio": "{year} up to {date}: {count}, {ratio}× the usual total by that date, {rank} since {since}.",
+    "rare": "{year} up to {date}: {count}, {rank} since {since}. Usually almost no fire here by that date.",
+    "rareSmall": "{year} up to {date}: {count}, too few to rank against other years. Usually almost no fire here by that date.",
+    "day": "{month} {day}",
+    "monthEnd": "the end of {month}"
+  }
+}

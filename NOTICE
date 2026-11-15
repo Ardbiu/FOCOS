@@ -1,0 +1,30 @@
+Focos
+Copyright 2026 the Focos team
+
+Licensed under the Apache License, Version 2.0.
+
+Data
+----
+- NASA FIRMS MODIS active fire detections (Terra/Aqua), yearly country files.
+  NASA's Fire Information for Resource Management System (FIRMS),
+  part of NASA's Earth Science Data and Information System (ESDIS).
+  https://firms.modaps.eosdis.nasa.gov/
+- NASA FIRMS VIIRS S-NPP 375 m active fire detections, yearly country files.
+- NASA FIRMS VIIRS NOAA-20 375 m active fire detections, yearly country files.
+- Province boundaries: Georef, Argentine government, CC BY 4.0.
+  https://apis.datos.gob.ar/georef/
+- Optional map layer: SAOCOM L-band radar mosaics, 2022, CONAE
+  (Comisión Nacional de Actividades Espaciales, Argentina), served by
+  CONAE's open WMS. https://geoportal.conae.gov.ar/
+- Basemap tiles: OpenStreetMap contributors, ODbL.
+
+Pipeline libraries
+------------------
+DuckDB (MIT), pandas (BSD-3-Clause), NumPy (BSD-3-Clause), SciPy (BSD-3-Clause),
+Shapely (BSD-3-Clause), Requests (Apache-2.0), pytest (MIT).
+
+Web libraries
+-------------
+Leaflet (BSD-2-Clause), Leaflet-Geoman free (MIT), D3 (ISC), Turf.js (MIT),
+fflate (MIT). Build and test only: Vite (MIT), TypeScript (Apache-2.0),
+Vitest (MIT), jsdom (MIT).

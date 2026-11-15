@@ -1,0 +1,569 @@
+{
+  "app": {
+    "name": "Focos",
+    "title": "Focos: un calendario de incendios para la Argentina",
+    "description": "Mirá cuándo se quema cualquier área de la Argentina, qué años fueron los peores y si este mes es inusual. Un solo registro desde 2003, armonizado a partir de los focos de calor MODIS y VIIRS de la NASA y probado en años apartados.",
+    "tagline": "Un solo calendario de incendios para la Argentina con MODIS y VIIRS, desde 2003",
+    "lede": "MODIS y VIIRS cuentan los incendios de distinta manera. Focos convierte VIIRS en focos equivalentes a MODIS, probados en años que no vio, para comparar todos los años desde 2003.",
+    "loading": "Cargando el registro de incendios…",
+    "loadingGrid": "Cargando la grilla de incendios de esta área…",
+    "loadError": "No se pudieron cargar los datos ({file}).",
+    "loadErrorPlain": "No se pudieron cargar los datos.",
+    "retry": "Reintentar",
+    "noscript": "Focos dibuja su calendario de incendios con JavaScript, que está desactivado en este navegador. El método, los resultados y los datos están en GitHub:",
+    "shareAlt": "La página de Focos para toda la Argentina: un mapa de las provincias coloreadas según su tendencia de incendios desde 2003 y la tendencia nacional en una oración."
+  },
+  "nav": {
+    "method": "Cómo funciona",
+    "skip": "Ir a los resultados"
+  },
+  "footer": {
+    "dataThrough": "Datos hasta {date}",
+    "firms": "Datos de incendios: detecciones de focos activos de NASA FIRMS con MODIS (Aqua) y VIIRS ({viirs}).",
+    "boundaries": "Límites provinciales: Georef, Argentina (CC BY 4.0).",
+    "source": "Código fuente en GitHub",
+    "si": "Hecho con Claude, un asistente de IA (Anthropic). “How SI was used” en el README dice qué hizo."
+  },
+  "area": {
+    "heading": "Elegí un área",
+    "province": "Provincia",
+    "nation": "Toda la Argentina",
+    "custom": "Área dibujada o círculo",
+    "mapSummary": "Dibujar en el mapa o elegir un punto",
+    "touchHint": "Tocá el mapa para moverlo",
+    "overlay": {
+      "label": "Mosaico de radar 2022 (CONAE SAOCOM)",
+      "attribution": "Mosaico SAOCOM: CONAE",
+      "error": "El servicio de mapas de la CONAE no respondió."
+    },
+    "drawHint": "O dibujá un polígono o un rectángulo en el mapa, o hacé clic en una provincia.",
+    "draw": {
+      "polygon": "Dibujar un polígono",
+      "rectangle": "Dibujar un rectángulo",
+      "rectangleHint": "Presioná y arrastrá sobre el mapa"
+    },
+    "mapLabel": "Mapa de la Argentina con sus provincias",
+    "mapError": "No se pudo cargar el mapa. La lista de provincias y el formulario de punto y radio siguen funcionando.",
+    "circle": {
+      "legend": "Punto y radio",
+      "lat": "Latitud",
+      "lon": "Longitud",
+      "km": "Radio (km)",
+      "apply": "Usar este círculo",
+      "invalid": "Ingresá una latitud entre −90 y 90 y una longitud entre −180 y 180, en grados decimales.",
+      "clamped": "El radio se ajustó a {km} km (permitido: de 5 a 300)."
+    },
+    "name": {
+      "polygon": "Área dibujada",
+      "circle": "{km} km alrededor de {lat}, {lon}"
+    },
+    "status": {
+      "clipped": "Parte de esta área queda fuera de la Argentina. Solo se cuenta la parte de adentro.",
+      "outside": "Esta área queda fuera de la Argentina, así que no hay registro de incendios para ella. Elegí una provincia, dibujá en el mapa o ingresá un punto dentro del país.",
+      "tooSmall": "Esta área es más chica que una celda de la grilla (unos 5 km), así que se muestra la celda que contiene su centro.",
+      "thin": "Esta área es más angosta que una celda de la grilla (unos 5 km) y no contiene el centro de ninguna celda, así que se muestran las celdas que atraviesa.",
+      "custom": "Las áreas dibujadas y los círculos se resuelven a unos 5 km."
+    },
+    "trendLegend": {
+      "title": "Tendencia desde {from}",
+      "falling": "En descenso",
+      "none": "Sin tendencia significativa",
+      "rising": "En aumento",
+      "unrated": "Muy poco fuego",
+      "unsure": "Punteado: la tendencia no supera su comprobación"
+    }
+  },
+  "years": {
+    "legend": "Años que se muestran",
+    "from": "Primer año",
+    "to": "Último año",
+    "range": "{from}–{to}"
+  },
+  "dates": {
+    "legend": "Fechas para el CSV de focos",
+    "from": "Desde",
+    "to": "Hasta"
+  },
+  "months": {
+    "short": [
+      "ene",
+      "feb",
+      "mar",
+      "abr",
+      "may",
+      "jun",
+      "jul",
+      "ago",
+      "sep",
+      "oct",
+      "nov",
+      "dic"
+    ],
+    "long": [
+      "enero",
+      "febrero",
+      "marzo",
+      "abril",
+      "mayo",
+      "junio",
+      "julio",
+      "agosto",
+      "septiembre",
+      "octubre",
+      "noviembre",
+      "diciembre"
+    ]
+  },
+  "ordinal": {
+    "one": "{n}.º",
+    "two": "{n}.º",
+    "few": "{n}.º",
+    "other": "{n}.º"
+  },
+  "period": {
+    "month": "{month} {year}",
+    "partial": {
+      "one": "1 {month} {year}",
+      "other": "1–{n} {month} {year}"
+    },
+    "monthLong": "{month} de {year}"
+  },
+  "unit": {
+    "hotspots": {
+      "one": "{n} foco equivalente a MODIS",
+      "other": "{n} focos equivalentes a MODIS"
+    }
+  },
+  "verdict": {
+    "season": {
+      "range": "La temporada de incendios aquí va de {start} a {end}.",
+      "rangePeak": "La temporada de incendios aquí va de {start} a {end} y alcanza su máximo en {peak}.",
+      "spread": "Aquí el fuego se reparte en la mayor parte del año y alcanza su máximo en {peak}.",
+      "spreadOnly": "Aquí el fuego se reparte en la mayor parte del año.",
+      "single": "La temporada de incendios aquí se concentra en {month}.",
+      "none": "Aquí no hay una temporada de incendios clara."
+    },
+    "rank": {
+      "highest": "el valor más alto",
+      "nth": "el {ordinal} valor más alto",
+      "lowest": "el valor más bajo",
+      "highestOf": "el valor más alto para {what}",
+      "nthOf": "el {ordinal} valor más alto para {what}",
+      "lowestOf": "el valor más bajo para {what}",
+      "whatPartial": {"one": "el 1 de {monthLong}", "other": "los días 1 a {n} de {monthLong}"}
+    },
+    "month": {
+      "ratio": "{period}: {ratio} veces el nivel habitual, {rank} desde {since}.",
+      "zero": "{period}: sin focos; el nivel habitual es de unos {median}.",
+      "rare": "{period}: {count}, {rank} desde {since}. Normalmente casi no hay fuego aquí en este mes.",
+      "rareZero": "{period}: sin focos. Normalmente casi no hay fuego aquí en este mes.",
+      "rareSmall": "{period}: {count}, demasiado pocos para compararlos con otros años. Normalmente casi no hay fuego aquí en este mes.",
+      "incomplete": "{period}: los datos satelitales están incompletos, así que no se compara con otros años.",
+      "noBaseline": "{period}: {count}. No hay suficientes años completos para compararlo.",
+      "noData": "Todavía no hay datos de {period}."
+    },
+    "label": {
+      "latest": "Último mes",
+      "selected": "Mes seleccionado",
+      "trend": "Tendencia de largo plazo"
+    }
+  },
+  "view": {
+    "legend": "Serie",
+    "harmonized": "Armonizada",
+    "raw": "Sin armonizar",
+    "hint": "«Sin armonizar» muestra los conteos antes de la armonización, con el salto del cambio de sensor en {year}."
+  },
+  "mode": {
+    "legend": "Colorear por",
+    "count": "Cantidad",
+    "anomaly": "Anomalía"
+  },
+  "divider": {
+    "harmonized": "MODIS arriba, VIIRS armonizado abajo",
+    "raw": "MODIS arriba, VIIRS sin armonizar abajo: no comparables"
+  },
+  "rawBanner": "Vista sin armonizar: conteos tal como los informó cada sensor. MODIS hasta {before} y VIIRS sin armonizar desde {year} no son comparables. El resumen, las anomalías y el perfil estacional están desactivados.",
+  "calendar": {
+    "heading": "Calendario de incendios",
+    "label": "Calendario de incendios de {area}, de {from} a {to}. Cada celda es un mes; usá las flechas para moverte y Enter para seleccionar. Los mismos números están en la vista de tabla.",
+    "year": "Año",
+    "yearTotal": "Total del año",
+    "total": "Total",
+    "fireSeason": "temporada de incendios",
+    "tableToggle": "Ver como tabla",
+    "caption": {
+      "harmonized": "Focos equivalentes a MODIS por mes, {area}",
+      "raw": "Detecciones sin armonizar por mes (no comparables antes y después de 2012), {area}"
+    },
+    "notes": {
+      "incomplete": "* datos satelitales incompletos",
+      "partial": {
+        "one": "† mes en curso (día 1)",
+        "other": "† mes en curso (días 1–{n})"
+      },
+      "nodata": "– todavía sin datos"
+    },
+    "srIncomplete": "datos satelitales incompletos",
+    "srPartial": "mes en curso",
+    "srNodata": "todavía sin datos",
+    "empty": "No se registraron focos en esta área en estos años.",
+    "detailHint": "Seleccioná un mes para ver acá sus números y sus detecciones satelitales en el mapa.",
+    "detailHintNation": "Elegí un mes para ver sus números acá. Para ver sus detecciones satelitales en el mapa, elegí una provincia o dibujá un área."
+  },
+  "legend": {
+    "count": "Focos equivalentes a MODIS por mes",
+    "raw": "Detecciones sin armonizar por mes, en la escala de color de la vista armonizada",
+    "anomaly": "Comparado con el nivel habitual del mes",
+    "atLeast": "≥ {value}",
+    "aboveZero": "> 0",
+    "zero": "Ninguno",
+    "rare": "Normalmente casi sin fuego",
+    "hatched": "Mes incompleto o en curso",
+    "nodata": "Sin datos",
+    "ticks": [
+      "¼×",
+      "½×",
+      "habitual",
+      "2×",
+      "4×"
+    ]
+  },
+  "category": {
+    "record_high": "Récord para este mes",
+    "well_above": "Muy por encima de lo normal",
+    "above": "Por encima de lo normal",
+    "near": "Cerca de lo normal",
+    "below": "Por debajo de lo normal"
+  },
+  "cell": {
+    "raw": {
+      "one": "{n} detección sin armonizar",
+      "other": "{n} detecciones sin armonizar"
+    },
+    "rawNote": "Los conteos sin armonizar no son comparables antes y después de 2012",
+    "median": "Nivel habitual de este mes (mediana): {median}",
+    "ratio": "{ratio} veces el nivel habitual",
+    "rare": "Normalmente casi no hay fuego aquí en este mes",
+    "rank": "{rank} desde {since}",
+    "error": "En la prueba, un conteo de este tamaño quedó típicamente a menos de {pct} % de MODIS ({carrier})",
+    "errorPlain": "En la prueba, un conteo de este tamaño quedó típicamente a menos de {pct} % de MODIS",
+    "errorTooSmall": "Muy pocos focos para estimar el error típico",
+    "incomplete": "Datos satelitales incompletos: no se compara con otros años",
+    "partial": {
+      "one": "Mes en curso (día 1), comparado con el mismo día de otros años",
+      "other": "Mes en curso (días 1–{n}), comparado con los mismos días de otros años"
+    },
+    "partialRaw": {
+      "one": "Mes en curso (día 1)",
+      "other": "Mes en curso (días 1–{n})"
+    },
+    "nodata": "Todavía sin datos"
+  },
+  "testLine": {
+    "text": "Probado en {from}–{to}, años que el método nunca vio: el conteo mensual de una provincia quedó típicamente a menos de {error} % de MODIS (empalme directo: {naive} % de diferencia). El error es mayor en áreas chicas y con pocos focos.",
+    "link": "Cómo funciona"
+  },
+  "robust": {
+    "holds": "Quitando esa diferencia de todos los años de VIIRS, la tendencia se mantiene: {sentence}",
+    "holdsNone": "Quitando esa diferencia de todos los años de VIIRS, sigue sin haber una tendencia significativa.",
+    "changes": "Quitando esa diferencia de todos los años de VIIRS, la tendencia sería: {sentence}"
+  },
+  "caution": {
+    "above": "En {name} el registro armonizado quedó un {pct} % por encima de MODIS en la prueba de {from}–{to}.",
+    "below": "En {name} el registro armonizado quedó un {pct} % por debajo de MODIS en la prueba de {from}–{to}.",
+    "extremeLow": "En promedio, en la prueba los meses con un nivel de {band} quedaron cerca de un {pct} % por debajo; cada mes varió alrededor de esa cifra.",
+    "extremeHigh": "En promedio, en la prueba los meses con un nivel de {band} quedaron cerca de un {pct} % por encima; cada mes varió alrededor de esa cifra.",
+    "band5": "5 a 10 veces el habitual",
+    "band10": "10 veces el habitual o más"
+  },
+  "trend": {
+    "heading": "Tendencia",
+    "rising": "En aumento, cerca de un {pct} % por década desde {from} ({p}).",
+    "falling": "En descenso, cerca de un {pct} % por década desde {from} ({p}).",
+    "risingPerYear": "En aumento, cerca de {amount} por año desde {from} ({p}).",
+    "fallingPerYear": "En descenso, cerca de {amount} por año desde {from} ({p}).",
+    "none": "Sin tendencia significativa desde {from}.",
+    "rare": "Muy poco fuego aquí para evaluar una tendencia.",
+    "short": "Muy pocos años completos para evaluar una tendencia.",
+    "pEquals": "p = {p}",
+    "pBelow": "p < {p}",
+    "raw": "Conteos sin armonizar: {sentence} Esto incluye el cambio de sensor de {year}.",
+    "rawWouldSay": "Empalmados sin armonizar, los conteos mostrarían: {sentence}",
+    "recentNone": "Si se toma solo desde {year}, no hay tendencia significativa.",
+    "unit": {
+      "hotspots": {
+        "one": "{n} foco",
+        "other": "{n} focos"
+      },
+      "detections": {
+        "one": "{n} detección",
+        "other": "{n} detecciones"
+      }
+    }
+  },
+  "yearly": {
+    "heading": "Totales anuales",
+    "label": "Totales anuales de {area}, de {from} a {to}. El año más alto es {top}.",
+    "bar": "{year}: {count}",
+    "barPartial": "{year}: {count} (año incompleto)",
+    "hatched": "Rayado: el año en curso o un año con un mes incompleto.",
+    "switch": "VIIRS desde {year}",
+    "eraModis": "MODIS",
+    "eraViirs": "VIIRS, armonizado",
+    "eraViirsRaw": "VIIRS, sin armonizar",
+    "trendTitle": "Tendencia ajustada a los años completos",
+    "trendLine": "Línea azul: la tendencia, ajustada a los años completos.",
+    "empty": "No se registraron focos en esta área."
+  },
+  "seasonal": {
+    "heading": "Perfil estacional",
+    "label": "Perfil estacional de {area}: la mediana y la mitad central de los años para cada mes, con {year}.",
+    "median": "Mediana de {from}–{to}",
+    "band": "Mitad central de los años",
+    "year": "{year}",
+    "open": "Mes en curso o incompleto",
+    "partialUsual": "Nivel habitual del 1 al {day} de {month}",
+    "point": "{month} {year}: {count}",
+    "empty": "No se registraron focos en esta área."
+  },
+  "csv": {
+    "hotspotsTitle": "Focos: detecciones satelitales de incendios con pesos equivalentes a MODIS",
+    "calendarTitle": "Focos: calendario de incendios equivalente a MODIS",
+    "area": "Área: {area}",
+    "dateRange": "Rango de fechas: {from} a {to} (fechas locales)",
+    "monthRange": "Rango de fechas: {from} a {to}",
+    "dataThrough": "Datos hasta: {date}",
+    "calibration": "Calibración: {candidate}, ajustada con {train} y probada en {test}",
+    "typicalError": "Error típico: {error} %, el error absoluto mediano de las provincias-mes con 20 focos o más en los años de prueba (la mitad quedó más cerca, la otra mitad no)",
+    "source": "Fuente de datos: detecciones de focos activos de NASA FIRMS, MODIS (Aqua) y VIIRS ({viirs})",
+    "site": "Sitio: {url}",
+    "code": "Hecho con Claude, un asistente de IA (Anthropic); “How SI was used” en el README de {repo} dice qué hizo",
+    "weight": "modis_equivalent_weight: la parte de un foco equivalente a MODIS que representa la detección. Su suma en una provincia y un mes es la cantidad del calendario. Vale 0 para las detecciones que no entran en la serie armonizada.",
+    "weightDrawn": "modis_equivalent_weight: la parte de un foco equivalente a MODIS que representa la detección. Vale 0 para las detecciones que no entran en la serie armonizada. El calendario de un área dibujada o de un círculo se suma sobre una grilla de unos 5 km, así que la suma de estos pesos puede diferir de la cantidad que muestra el calendario.",
+    "category": "category: record_high, well_above, above, near o below respecto del nivel habitual del mes; rare cuando ese nivel es menor que 5 focos (sin cociente); vacío cuando el mes no se compara."
+  },
+  "downloads": {
+    "heading": "Descargas",
+    "calendarCsv": "CSV del calendario",
+    "png": "PNG del calendario",
+    "hotspotsCsv": "CSV de focos",
+    "preparing": "Preparando el CSV de focos…",
+    "saved": {
+      "one": "Se guardó {n} detección satelital en {file}.",
+      "other": "Se guardaron {n} detecciones satelitales en {file}."
+    },
+    "savedFile": "Se guardó {file}.",
+    "tooLarge": "El CSV de focos está pensado para una provincia o un área dibujada, y esta tiene demasiadas detecciones para un solo archivo. Elegí una provincia, o dibujá un área más chica.",
+    "hotspotsNation": "Para todo el país el CSV de focos sería demasiado grande: primero elegí una provincia o dibujá un área.",
+    "outside": "No hay detecciones para descargar de un área fuera de la Argentina.",
+    "pngError": "No se pudo generar la imagen en este navegador.",
+    "pngTitle": "{area} · {from}–{to} · {what}",
+    "pngFooter": "Focos · datos: NASA FIRMS · hecho con IA (Claude)",
+    "pngCount": "Focos equivalentes a MODIS por mes",
+    "pngAnomaly": "Focos equivalentes a MODIS por mes, coloreados por anomalía",
+    "pngRaw": "Detecciones sin armonizar por mes (no comparables antes y después de 2012)"
+  },
+  "dots": {
+    "loading": "Cargando las detecciones satelitales de {period}…",
+    "shown": {
+      "one": "{n} detección satelital de {period} en el mapa.",
+      "other": "{n} detecciones satelitales de {period} en el mapa."
+    },
+    "capped": "Se muestran {shown} de {total} detecciones satelitales de {period}.",
+    "weighed": "Ponderadas, las detecciones del mes suman unos {count}.",
+    "weighedDrawn": "El calendario de un área dibujada se cuenta en la grilla de 5 km, así que puede diferir.",
+    "none": "No hay detecciones satelitales en {period} en esta área.",
+    "tooLarge": "Esta área tiene demasiadas detecciones para dibujarlas en el mapa. Elegí una provincia, o dibujá un área más chica, para verlas.",
+    "error": "No se pudieron cargar las detecciones (tesela {tile}).",
+    "errorPlain": "No se pudieron cargar las detecciones."
+  },
+  "lang": {
+    "label": "Idioma",
+    "en": "EN",
+    "es": "ES",
+    "enName": "English",
+    "esName": "Español"
+  },
+  "link": {
+    "copy": "Copiar enlace",
+    "copied": "Enlace copiado.",
+    "manual": "Copiá este enlace: {url}"
+  },
+  "stories": {
+    "heading": "Tres incendios para empezar",
+    "delta": "Delta del Paraná",
+    "pampa": "Pastizales de La Pampa",
+    "corrientes": "Esteros de Corrientes"
+  },
+  "format": {
+    "percent": "{n} %",
+    "times": "{n}×"
+  },
+  "method": {
+    "pageTitle": "Cómo funciona · Focos",
+    "title": "Cómo funciona",
+    "back": "Volver al calendario",
+    "loading": "Cargando los resultados de la prueba…",
+    "question": {
+      "heading": "1. La pregunta",
+      "p1": "El registro de incendios de la Argentina viene de dos tipos de sensor satelital. MODIS, a bordo del satélite Aqua, informa focos de calor desde 2002. VIIRS, que vuela en S-NPP desde 2012 y en NOAA-20 desde 2018, ve incendios más chicos, así que informa varias veces más focos para la misma temporada.",
+      "p2": "Aqua deriva en su órbita y está al final de su vida útil, de modo que el registro tiene que pasar a VIIRS. ¿Se pueden leer como uno solo dos registros que cuentan distinto?"
+    },
+    "naive": {
+      "heading": "2. La respuesta directa, y por qué falla",
+      "text": "La respuesta simple es poner los conteos de VIIRS a continuación de los de MODIS. Eso dibuja un salto que ningún incendio causó: en {year}, el primer año con los dos sensores, VIIRS informó {viirs} detecciones donde el registro de Aqua cuenta {aqua} pasos de celda con fuego. Cualquier tendencia leída a través de ese salto es falsa.",
+      "caption": "Focos en la Argentina por año. La línea de VIIRS armonizado es el registro que muestra Focos.",
+      "label": "Totales nacionales por año de {from} a {to}: Aqua MODIS, VIIRS sin armonizar y VIIRS armonizado.",
+      "aqua": "Aqua MODIS (la referencia)",
+      "raw": "VIIRS, sin armonizar",
+      "harmonized": "VIIRS, armonizado"
+    },
+    "steps": {
+      "heading": "3. El método, en tres pasos",
+      "s1": "Limpiar los dos sensores de la misma manera. Se conservan solo las detecciones que el archivo marca como incendio de vegetación, lo que descarta las antorchas de gas y otras fuentes de calor fijas que tiene marcadas (no todas lo están; ver Límites), se descartan las detecciones de baja confianza y cada detección recibe su fecha local.",
+      "s2": "Contar los dos sensores de la misma manera. La unidad es el paso de celda con fuego: una celda de alrededor de 1 km que ardió en una fecha local, de día o de noche. Un incendio que VIIRS ve como cinco píxeles cuenta una vez.",
+      "s3": "Convertir VIIRS a equivalente MODIS. Para cada región, estación y día o noche, el cociente entre los pasos de celda de Aqua y los de VIIRS en {from}–{to} se vuelve un peso para cada detección de VIIRS. Cada número de la aplicación es una suma de esos pesos. Solo se convierte VIIRS hacia abajo; nadie puede inventar los incendios chicos que MODIS nunca vio.",
+      "loyo": "Se compararon tres maneras de fijar los cocientes en los años de ajuste, dejando un año afuera por vez. Sus errores típicos fueron {c1}, {c2} y {c3}; el empalme directo dio {c0}. Se eligió la candidata más simple a menos de un décimo de la mejor ({chosen}) y se congeló antes de la prueba."
+    },
+    "test": {
+      "heading": "4. La prueba",
+      "design": "Los cocientes se ajustaron solo con {trainFrom}–{trainTo}. Los años {testFrom} y {testTo} se apartaron hasta que el método quedó congelado. En esos años se compara el registro de VIIRS armonizado con lo que contó Aqua. Los resultados se recalcularon una vez, después de que una segunda revisión (hecha por otra sesión de IA que no había escrito el código) cambió qué días cuentan como cortes; los cocientes congelados no cambiaron.",
+      "scatterCaption": "Cada punto es una provincia en un mes de los años de prueba. Sobre la línea, VIIRS es igual a Aqua. Los dos ejes son logarítmicos.",
+      "scatterLabel": "Provincias-mes de los años de prueba: focos de Aqua frente a VIIRS, sin armonizar y armonizado, en ejes logarítmicos. {n} provincias-mes.",
+      "axisAqua": "Focos de Aqua MODIS",
+      "axisViirs": "Focos de VIIRS",
+      "line": "VIIRS = Aqua",
+      "tableCaption": "Resultados de los años de prueba en tres escalas, armonizado junto al empalme directo",
+      "scale": "Escala",
+      "n": "Casos",
+      "bias": "Sesgo",
+      "error": "Error típico",
+      "correlation": "Correlación",
+      "harmonized": "Armonizado",
+      "naive": "Empalme directo",
+      "scales": {
+        "national_month": "País, por mes",
+        "province_month": "Provincia, por mes",
+        "tile_month": "Tesela de 1°, por mes"
+      },
+      "notes": "El sesgo es el total por encima o por debajo del de Aqua. El error típico es la mediana del error absoluto, en porcentaje. La correlación se calcula sobre el logaritmo de los conteos. Solo se puntúan los casos con al menos 20 focos de Aqua.",
+      "targets": "Metas fijadas antes de la prueba: sesgo nacional dentro de ±{biasMax}, error por provincia y mes de {mapeMax} como máximo, correlación nacional de al menos {corrMin}.",
+      "met": {
+        "all": "Se cumplieron las tres.",
+        "some": "No se cumplieron todas: {list}."
+      },
+      "targetNames": {
+        "national_bias": "sesgo nacional",
+        "province_month_mape": "error por provincia y mes",
+        "national_month_logcorr": "correlación nacional"
+      },
+      "peak": "El mes más activo del año coincidió con el de Aqua en {share} de {n} provincias-año."
+    },
+    "byCount": {
+      "heading": "5. Conteos chicos y meses extremos",
+      "text": "El error depende de cuántos focos se están contando. La aplicación usa estas bandas cuando muestra un error típico, y no da ninguno por debajo de 5 focos.",
+      "caption": "Error típico según el tamaño del conteo (provincias-mes, años de prueba)",
+      "band": "Focos de Aqua",
+      "levelText": "También depende de cuán inusual fue el mes. Los meses extremos quedan subestimados: cerca de un {pct} por debajo a partir de 5 veces el nivel habitual.",
+      "levelCaption": "Sesgo según cuán inusual fue el mes para Aqua (provincias-mes, años de prueba)",
+      "level": "Mes frente a su nivel habitual"
+    },
+    "byProvince": {
+      "heading": "6. Provincia por provincia",
+      "text": "En los dos años de prueba, el total armonizado quedó a más de {limit} del de Aqua en {count} de {total} provincias. La aplicación lo avisa cuando se elige una de ellas.",
+      "caption": "Total armonizado frente al de Aqua, años de prueba. Las barras oscuras superan ±{limit}.",
+      "label": "Sesgo del registro armonizado por provincia en los años de prueba, de {top} ({topBias}) a {bottom} ({bottomBias}).",
+      "bar": "{name}: {bias}"
+    },
+    "testYears": {
+      "heading": "7. Los dos años de prueba",
+      "caption": "Totales nacionales de cada año de prueba",
+      "year": "Año",
+      "aqua": "Aqua MODIS",
+      "harmonized": "VIIRS armonizado"
+    },
+    "beyond": {
+      "heading": "8. Más allá de la prueba",
+      "ratioText": "El cociente anual entre Aqua y VIIRS armonizado fue de {first} en {firstYear} y de {last} en {lastYear}. El más alto fue el de {maxYear} ({max}) y el más bajo el de {minYear} ({min}). Una pasada de Aqua más tardía lo haría subir, y los cortes de S-NPP en 2024 pueden sumarse. El registro marca de más en los meses con poco fuego, y eso baja el cociente en un año tranquilo. Esta página no prueba la causa.",
+      "ratioCaption": "Aqua ÷ VIIRS armonizado, nacional, por año. Los años sombreados son los de prueba.",
+      "ratioCaptionEnds": "{caption} {year} termina cuando {name} dejó de entregar datos.",
+      "ratioLabel": "Cociente anual entre Aqua y VIIRS armonizado de {from} a {to}.",
+      "seamText": "En el empalme, de {from} a {to}, volaron los dos sensores y la serie pasa de uno al otro. Mes a mes, el total de VIIRS armonizado quedó a {bias} del de Aqua, con un error típico de {mape} en {n} meses.",
+      "seamCaption": "Focos nacionales por mes a través del paso de MODIS a VIIRS",
+      "seamLabel": "Totales nacionales por mes de {from} a {to}: Aqua MODIS y VIIRS armonizado."
+    },
+    "noaa20": {
+      "heading": "9. Un tercer satélite: NOAA-20",
+      "text": "S-NPP dejó de entregar datos el 2 de noviembre de 2026. NOAA-20 lleva el mismo instrumento VIIRS en la misma órbita y está a cargo del registro desde {month}. Sus cocientes se ajustaron con {trainFrom}–{trainTo}, los años estables que compartió con Aqua, y se probaron en los mismos años apartados.",
+      "fill": "NOAA-20 también reemplaza a S-NPP en {days} días desde {year}: los días en que S-NPP no entregó datos, o ninguno de día. Esos días llevan los conteos armonizados de NOAA-20. Esto se agregó después de la prueba y no cambia ninguno de sus resultados, que comparan solo S-NPP con Aqua.",
+      "textFuture": "S-NPP dejó de entregar datos el 2 de noviembre de 2026. NOAA-20 lleva el mismo instrumento VIIRS en la misma órbita y quedará a cargo del registro desde noviembre de 2026. Sus cocientes ya están ajustados, con {trainFrom}–{trainTo}, los años estables que compartió con Aqua, y probados en los mismos años apartados.",
+      "caption": "NOAA-20: la prueba frente a Aqua en los años apartados y el control de traspaso frente a S-NPP armonizado",
+      "testRow": "Prueba frente a Aqua, {scale}",
+      "handoverRow": "Traspaso {from}–{to} frente a S-NPP, {scale}",
+      "check": "Control"
+    },
+    "limits": {
+      "heading": "10. Límites",
+      "items": [
+        "Los satélites no ven los incendios bajo nubes o humo espeso, ni los incendios chicos o breves entre pasadas.",
+        "«Equivalente MODIS» cuenta de menos los incendios chicos por diseño. Las detecciones de VIIRS sin armonizar siguen en el CSV de focos.",
+        "Los conteos de focos no son área quemada.",
+        "Las áreas dibujadas y los círculos se resuelven a unos 5 km.",
+        "Los valores armonizados tienen un error típico, mayor en conteos chicos y en provincias sueltas.",
+        "Las fuentes de calor fijas rotuladas como incendio inflan la era VIIRS en algunas provincias.",
+        "Cuando el registro entra en el año en curso, sus últimos meses usan datos casi en tiempo real, que luego se revisan.",
+        "Esto es un registro del pasado y una medida de cuán inusual es un mes. No es un pronóstico."
+      ],
+      "extreme": "Los meses extremos quedan subestimados.",
+      "extremePct": "Los meses extremos quedan subestimados: cerca de un {pct} por debajo a partir de 5 veces el nivel habitual.",
+      "noaa20Provinces": "En {count} de {total} provincias, la diferencia de NOAA-20 con Aqua en los años de prueba se aparta de la de S-NPP en más de 10 puntos (la mayor, en {name}: S-NPP {snpp}, NOAA-20 {noaa}). Allí los meses que lleva NOAA-20, desde {month} y en los días que completa, pueden quedar por encima o por debajo de los meses de S-NPP."
+    },
+    "partner": {
+      "heading": "Cotejo con una agencia asociada"
+    },
+    "data": {
+      "heading": "Datos y créditos",
+      "items": [
+        "Detecciones de focos activos de NASA FIRMS, MODIS Colección 6.1 (Aqua).",
+        "Detecciones de focos activos de NASA FIRMS, VIIRS de 375 m (S-NPP y NOAA-20).",
+        "Límites provinciales: Georef, Argentina (CC BY 4.0).",
+        "Mapa base: colaboradores de OpenStreetMap.",
+        "Capa de mapa opcional: mosaicos de radar SAOCOM en banda L, 2022, CONAE (la agencia espacial argentina).",
+        "Hecho con Claude, un asistente de IA (Anthropic). “How SI was used” en el README dice qué hizo."
+      ],
+      "excluded": "Se dejan fuera de todas las comparaciones {days} días: los días en que uno de los sensores no entregó datos y una ventana del 16 de agosto al 2 de septiembre de 2020 que se apartó antes de la prueba como posible corte de Aqua. El archivo actual tiene datos de Aqua en la mayoría de esos días, así que dejarlos afuera es solo una precaución.",
+      "through": "Datos hasta {date}. Resultados de la prueba calculados el {generated}."
+    },
+    "trends": {
+      "text": "Provincia por provincia pasa lo mismo. Los conteos sin armonizar aumentan en {rawRising} de {total} provincias, porque VIIRS informa varias detecciones donde MODIS informaba una. El registro armonizado aumenta en {rising}, desciende en {falling}, no muestra una tendencia significativa en {none} y tiene muy poco fuego para evaluarla en {unrated}.",
+      "caption": "Tendencia de los totales anuales por provincia: registro armonizado y conteos sin armonizar",
+      "colProvince": "Provincia",
+      "colHarmonized": "Registro armonizado",
+      "colRaw": "Conteos sin armonizar",
+      "colCheck": "Quitando la diferencia de la prueba",
+      "holds": "Se mantiene",
+      "changes": "Cambia a: {trend}",
+      "note": "La última columna es una comprobación, no una corrección. Donde el registro armonizado de una provincia quedó a más del 15 % de MODIS en los años de prueba, su tendencia se vuelve a evaluar quitando esa diferencia de todos los años de VIIRS. Ningún conteo de la aplicación cambia. Los porcentajes de los conteos sin armonizar son muy altos donde el registro partió de muy poco fuego.",
+      "check": "Una comprobación que no depende del método. De {from} a {to}, Aqua MODIS sola, el mismo sensor todo el tiempo: {aqua}. El registro armonizado: {harmonized}. La órbita de Aqua se desplazó hacia un paso más tardío, más cerca del pico de fuego de la tarde, así que sus últimos años pueden quedar altos y esta comprobación, en todo caso, subestima la caída. Respalda la tendencia nacional pero no la prueba.",
+      "recent": "Solo de {year} a {to}, Aqua: {aqua}; registro armonizado: {harmonized}.",
+      "recentStep": "Solo de {year} a {to}, Aqua: {aqua}; registro armonizado: {harmonized}. La mayor parte de la caída ocurrió antes de {year}."
+    }
+  },
+  "trendShort": {
+    "rising": "En aumento, {pct} % por década",
+    "risingPlain": "En aumento",
+    "falling": "En descenso, {pct} % por década",
+    "fallingPlain": "En descenso",
+    "none": "Sin tendencia significativa",
+    "rare": "Muy poco fuego",
+    "short": "Muy pocos años"
+  },
+  "ytd": {
+    "ratio": "{year} hasta {date}: {count}, {ratio} veces el total habitual a esa fecha, {rank} desde {since}.",
+    "rare": "{year} hasta {date}: {count}, {rank} desde {since}. Normalmente casi no hay fuego aquí a esa fecha.",
+    "rareSmall": "{year} hasta {date}: {count}, demasiado pocos para compararlos con otros años. Normalmente casi no hay fuego aquí a esa fecha.",
+    "day": "el {day} de {month}",
+    "monthEnd": "fin de {month}"
+  }
+}

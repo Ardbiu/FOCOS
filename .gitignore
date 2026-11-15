@@ -1,0 +1,19 @@
+# data and secrets
+pipeline/data/raw/
+pipeline/data/work/
+.env
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# node
+node_modules/
+dist/
+# tooling
+.superpowers/
+.DS_Store
+pipeline/data/out/
+pipeline/data/*.log
+pipeline/data/*.txt
+.claude/
