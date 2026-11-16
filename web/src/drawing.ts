@@ -16,6 +16,9 @@ export const BAND = '#dcd9d0';
 export const HIGHLIGHT = '#b2182b';
 /** The colour of the fitted trend line over the yearly totals: the page's accent. */
 export const TREND = '#1f4e79';
+/** The series stitched without harmonizing, and the harmonized one (method page and intro). */
+export const RAW_COLOR = '#c65102';
+export const HARMONIZED_COLOR = '#1f6fb5';
 export const FONT = "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
 
 /** Rough width of a text in px; SVG cannot measure before it is on screen. */

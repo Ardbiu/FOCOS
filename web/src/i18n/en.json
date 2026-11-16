@@ -565,5 +565,16 @@
     "rareSmall": "{year} up to {date}: {count}, too few to rank against other years. Usually almost no fire here by that date.",
     "day": "{month} {day}",
     "monthEnd": "the end of {month}"
+  },
+  "intro": {
+    "heading": "A fire calendar for Argentina, one record since 2003.",
+    "chartTitle": "Hotspots per year, all of Argentina, {from}–{to}",
+    "legendRaw": "Stitched without harmonizing",
+    "legendFocos": "Focos, MODIS-equivalent",
+    "chartLabel": "Hotspots per year in Argentina, {from} to {to}: stitched without harmonizing, the count jumps when VIIRS takes over; harmonized by Focos, the years stay comparable.",
+    "bar": "{year}: {raw} stitched, {harmonized} MODIS-equivalent",
+    "enter": "Open the fire calendar",
+    "reopen": "Show the introduction",
+    "label": "Introduction to Focos"
   }
 }

@@ -1084,9 +1084,10 @@ describe('languages', () => {
     click('lang-en');
     await app!.idle();
     const english = Array.from(document.querySelectorAll('[data-i18n]')).map((element) => element.textContent);
-    // Every fixed text changes, apart from names that are the same in both languages.
+    // Every fixed text changes, apart from names that are the same in both languages
+    // (the language buttons, which the intro has too).
     const same = english.filter((value, i) => value === spanish[i]);
-    expect(same.sort()).toEqual(['EN', 'ES']);
+    expect([...new Set(same)].sort()).toEqual(['EN', 'ES']);
   });
 });
 
@@ -1474,5 +1475,38 @@ describe('when the data cannot be loaded', () => {
     await app.idle();
     expect(isHidden('load-status')).toBe(true);
     expect(isHidden('results-body')).toBe(false);
+  });
+});
+
+describe('the intro', () => {
+  it('draws the nation’s yearly hotspots, stitched and harmonized, for the complete years', async () => {
+    await start();
+    const c = completenessFromMeta(server.json('meta.json'));
+    const years = c.lastCompleteYear - 2003 + 1;
+    expect(document.querySelectorAll('#intro-chart rect.intro-bar-raw')).toHaveLength(years);
+    expect(document.querySelectorAll('#intro-chart rect.intro-bar-focos')).toHaveLength(years);
+    expect(text('intro-chart-title')).toBe(`Hotspots per year, all of Argentina, 2003–${c.lastCompleteYear}`);
+  });
+
+  it('quotes the held-out test and credits the data, as the page below does', async () => {
+    await start();
+    expect(text('intro-test')).toBe(text('test-line-text'));
+    expect(text('intro-credit')).toContain(text('footer-firms'));
+    expect(text('intro-credit')).toContain(text('data-through'));
+  });
+
+  it('switches the whole page to Spanish from its own buttons', async () => {
+    await start();
+    click('intro-lang-es');
+    await app!.idle();
+    expect(app!.state().lang).toBe('es');
+    expect(byId('intro-lang-es').getAttribute('aria-pressed')).toBe('true');
+    expect(byId('intro-lang-en').getAttribute('aria-pressed')).toBe('false');
+    expect(byId('lang-es').getAttribute('aria-pressed')).toBe('true');
+    expect(text('intro-heading')).toBe('Un calendario de incendios para la Argentina, un solo registro desde 2003.');
+    expect(text('intro-chart-title')).toContain('Focos por año');
+    click('intro-lang-en');
+    await app!.idle();
+    expect(app!.state().lang).toBe('en');
   });
 });

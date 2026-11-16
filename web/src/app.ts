@@ -70,6 +70,7 @@ import {
   type Area,
   type Mode,
 } from './state';
+import { drawIntroChart } from './intro';
 import { storyCards } from './stories';
 import {
   BIAS_CHECK_LIMIT,
@@ -216,6 +217,13 @@ export function startApp(doc: Document, options: StartOptions = {}): App {
     footerFirms: byId(doc, 'footer-firms'),
     stories: byId(doc, 'stories'),
     storyList: byId(doc, 'story-list'),
+    intro: byId(doc, 'intro'),
+    introLangEn: byId<HTMLButtonElement>(doc, 'intro-lang-en'),
+    introLangEs: byId<HTMLButtonElement>(doc, 'intro-lang-es'),
+    introChart: byId(doc, 'intro-chart'),
+    introChartTitle: byId(doc, 'intro-chart-title'),
+    introTest: byId(doc, 'intro-test'),
+    introCredit: byId(doc, 'intro-credit'),
   };
   const radios = (name: string) => Array.from(doc.querySelectorAll<HTMLInputElement>(`input[type="radio"][name="${name}"]`));
 
@@ -500,6 +508,21 @@ export function startApp(doc: Document, options: StartOptions = {}): App {
 
   // ---- Drawing ------------------------------------------------------------------
 
+  /** The intro's chart: the nation's yearly hotspots, stitched and harmonized, for the complete years. */
+  function drawIntro(): void {
+    if (!loaded) return;
+    const c = loaded.completeness;
+    const nation = loaded.areas[0];
+    const raw = yearlyTotals(nation.raw, c);
+    const years = yearlyTotals(nation.monthly, c)
+      .map((row, i) => ({ year: row.year, harmonized: row.value, raw: raw[i]?.value ?? 0 }))
+      .filter((row) => row.year <= c.lastCompleteYear);
+    const lang = state.lang;
+    el.introChartTitle.textContent =
+      years.length > 0 ? t(lang, 'intro.chartTitle', { from: years[0].year, to: years[years.length - 1].year }) : '';
+    drawIntroChart(el.introChart, years, yearOfIdx(loaded.carriers[1]?.fromIdx ?? 0), lang);
+  }
+
   /** The parts that depend only on the language and the loaded files. */
   function fillFixedParts(): void {
     if (!loaded) return;
@@ -510,6 +533,9 @@ export function startApp(doc: Document, options: StartOptions = {}): App {
     el.dataThrough.textContent = t(lang, 'footer.dataThrough', { date: loaded.meta.data_end_date });
     // Only the satellites that carry the record in this data are credited.
     el.footerFirms.textContent = t(lang, 'footer.firms', { viirs: viirsSatellites(loaded.carriers).join(', ') });
+    el.introTest.textContent = testLine(loaded.meta, lang);
+    el.introCredit.textContent = `${el.footerFirms.textContent} ${el.dataThrough.textContent}.`;
+    drawIntro();
 
     const provinces = loaded.areas.slice(1).sort((a, b) => a.name.localeCompare(b.name, lang));
     el.province.replaceChildren(
@@ -526,8 +552,8 @@ export function startApp(doc: Document, options: StartOptions = {}): App {
     el.dateTo.min = `${YEAR_MIN}-01-01`;
     el.dateTo.max = loaded.meta.data_end_date;
 
-    el.langEn.setAttribute('aria-pressed', String(lang === 'en'));
-    el.langEs.setAttribute('aria-pressed', String(lang === 'es'));
+    for (const button of [el.langEn, el.introLangEn]) button.setAttribute('aria-pressed', String(lang === 'en'));
+    for (const button of [el.langEs, el.introLangEs]) button.setAttribute('aria-pressed', String(lang === 'es'));
     // Every link to the method page carries the language, so a Spanish reader lands on the Spanish page.
     for (const link of doc.querySelectorAll('a[data-method-link]')) {
       link.setAttribute('href', lang === 'en' ? 'method.html' : `method.html#lang=${lang}`);
@@ -1019,6 +1045,10 @@ export function startApp(doc: Document, options: StartOptions = {}): App {
     if (next !== yearAt(event.target)) markYear(next);
   }
 
+  function redrawIntro(): void {
+    if (!el.intro.hidden) drawIntro();
+  }
+
   const listeners: Array<[EventTarget, string, EventListener]> = [
     [el.yearly, 'pointerover', onChartPointerOver],
     [el.yearly, 'pointerout', onChartPointerOut],
@@ -1038,6 +1068,11 @@ export function startApp(doc: Document, options: StartOptions = {}): App {
     [el.downloadHotspots, 'click', () => inBackground(saveHotspots)],
     [el.langEn, 'click', () => setLanguage('en')],
     [el.langEs, 'click', () => setLanguage('es')],
+    [el.introLangEn, 'click', () => setLanguage('en')],
+    [el.introLangEs, 'click', () => setLanguage('es')],
+    // The intro's chart is drawn at the width it is shown at.
+    [doc, 'intro-shown', redrawIntro],
+    [win, 'resize', redrawIntro],
     [el.copyLink, 'click', () => enqueue(copyLink)],
     [el.mapDetails, 'toggle', () => el.mapDetails.open && enqueue(loadMap)],
     ...[...radios('view'), ...radios('mode')].map((radio): [EventTarget, string, EventListener] => [radio, 'change', onRadioChange]),

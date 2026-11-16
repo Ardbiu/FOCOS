@@ -7,7 +7,9 @@ import type { ProvinceBias, Validation } from './data';
 import { h, svg } from './dom';
 import {
   BAR_LIGHT,
+  HARMONIZED_COLOR,
   INK,
+  RAW_COLOR,
   LINE,
   MUTED,
   drawResponsive,
@@ -19,8 +21,7 @@ import {
 
 /** Three hues that stay apart for colour-blind readers; the lines also differ in dash. */
 export const AQUA_COLOR = INK;
-export const RAW_COLOR = '#c65102';
-export const HARMONIZED_COLOR = '#1f6fb5';
+export { HARMONIZED_COLOR, RAW_COLOR };
 
 export interface ChartText {
   /** The chart's spoken label. */

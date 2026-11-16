@@ -1156,3 +1156,148 @@ input[type='date'] {
 .cell-detail {
   font-variant-numeric: tabular-nums;
 }
+
+/* ---- Intro: the first visit's page, over the app ------------------------------ */
+
+html.intro-open {
+  overflow: hidden;
+}
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--paper);
+}
+
+.intro-inner {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vh, 2.5rem) 1rem 2.5rem;
+}
+
+.intro-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: clamp(1.5rem, 6vh, 3.5rem);
+}
+
+.intro-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.intro-heading {
+  max-width: 24ch;
+  font-size: clamp(1.75rem, 5vw, 2.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.intro-figure {
+  margin: 1.75rem 0 0;
+  padding: 0.9rem 1rem 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.intro-chart {
+  min-height: 12rem;
+  margin-top: 0.5rem;
+}
+
+.intro-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.intro-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.intro-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.intro-swatch {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 2px;
+}
+
+/* RAW_COLOR and HARMONIZED_COLOR in drawing.ts, as on the method page. */
+.intro-swatch-raw {
+  background: #c65102;
+}
+
+.intro-swatch-focos {
+  background: #1f6fb5;
+}
+
+.intro-lede {
+  max-width: 60ch;
+  margin-top: 1.5rem;
+  font-size: 1.0625rem;
+}
+
+.intro-test {
+  max-width: 60ch;
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.intro-enter {
+  min-height: 2.75rem;
+  padding: 0.55rem 1.25rem;
+  background: var(--ink);
+  color: var(--surface);
+  font-size: 1rem;
+}
+
+.intro-enter:hover {
+  background: #3a3833;
+}
+
+.intro-credit {
+  margin-top: 2.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.link-button {
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--accent);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}

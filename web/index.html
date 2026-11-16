@@ -17,6 +17,40 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
+    <!-- The intro: shown over the page the first time someone opens the plain address
+         (src/intro.ts). The app loads underneath meanwhile. -->
+    <div id="intro" class="intro" role="dialog" aria-modal="true" aria-labelledby="intro-heading" hidden>
+      <div class="intro-inner">
+        <div class="intro-top">
+          <p class="intro-name">Focos</p>
+          <div class="lang-toggle" role="group" data-i18n-attr="aria-label:lang.label">
+            <button type="button" id="intro-lang-en" class="lang-button" lang="en" aria-pressed="true" data-i18n="lang.en" data-i18n-attr="aria-label:lang.enName"></button>
+            <button type="button" id="intro-lang-es" class="lang-button" lang="es" aria-pressed="false" data-i18n="lang.es" data-i18n-attr="aria-label:lang.esName"></button>
+          </div>
+        </div>
+
+        <h2 id="intro-heading" class="intro-heading" data-i18n="intro.heading"></h2>
+
+        <figure class="intro-figure">
+          <figcaption id="intro-chart-title" class="overline"></figcaption>
+          <div id="intro-chart" class="intro-chart"></div>
+          <ul class="intro-legend">
+            <li><span class="intro-swatch intro-swatch-raw" aria-hidden="true"></span><span data-i18n="intro.legendRaw"></span></li>
+            <li><span class="intro-swatch intro-swatch-focos" aria-hidden="true"></span><span data-i18n="intro.legendFocos"></span></li>
+          </ul>
+        </figure>
+
+        <p class="intro-lede" data-i18n="app.lede"></p>
+        <p id="intro-test" class="intro-test"></p>
+
+        <div class="intro-actions">
+          <button type="button" id="intro-enter" class="button intro-enter" data-i18n="intro.enter"></button>
+          <a href="method.html" data-method-link data-i18n="nav.method"></a>
+        </div>
+
+        <p id="intro-credit" class="intro-credit"></p>
+      </div>
+    </div>
     <!-- The product name is the only text kept in the HTML. Every other string
          comes from src/i18n and is filled in by the script (data-i18n). -->
     <a class="skip-link" href="#results" data-i18n="nav.skip"></a>
@@ -196,6 +230,7 @@
       <p data-i18n="footer.boundaries"></p>
       <p><a href="https://github.com/Ardbiu/FOCOS" data-i18n="footer.source"></a></p>
       <p id="footer-si" data-i18n="footer.si"></p>
+      <p><button type="button" id="intro-reopen" class="link-button" data-i18n="intro.reopen"></button></p>
     </footer>
 
     <script type="module" src="/src/main.ts"></script>

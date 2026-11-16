@@ -565,5 +565,16 @@
     "rareSmall": "{year} hasta {date}: {count}, demasiado pocos para compararlos con otros años. Normalmente casi no hay fuego aquí a esa fecha.",
     "day": "el {day} de {month}",
     "monthEnd": "fin de {month}"
+  },
+  "intro": {
+    "heading": "Un calendario de incendios para la Argentina, un solo registro desde 2003.",
+    "chartTitle": "Focos por año, toda la Argentina, {from}–{to}",
+    "legendRaw": "Empalme sin armonizar",
+    "legendFocos": "Focos, equivalentes a MODIS",
+    "chartLabel": "Focos por año en la Argentina, de {from} a {to}: con el empalme sin armonizar, el conteo salta cuando VIIRS toma el relevo; armonizados por Focos, los años siguen siendo comparables.",
+    "bar": "{year}: {raw} con empalme, {harmonized} equivalentes a MODIS",
+    "enter": "Abrir el calendario de incendios",
+    "reopen": "Ver la introducción",
+    "label": "Introducción a Focos"
   }
 }
